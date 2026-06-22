@@ -19,7 +19,7 @@ Each tweet is a JSON object inside the `tweetsData = [ ... ]` array near the bot
 
 For every tweet added, do **all four**:
 
-1. **Categorize.** Pick one of the 5 existing labels. If none fit, ask before introducing a new category. Edge calls: confirm with Adam.
+1. **Categorize.** Pick one of the 5 existing labels. **Before assigning a label, sample it: read 20+ tweets Adam has already filed under that category** (filter the live site by it, or grep `"category": "#label"` in `index.html`) so your pick matches how Adam actually uses the label, not the dictionary meaning of the word. The labels are looser/more idiosyncratic than they sound — e.g. `#beauty` covers aesthetic, poetic, and sublime observations, not just physical looks. If none fit, ask before introducing a new category. Edge calls: confirm with Adam.
 2. **Update header total count.** Edit the literal `<h1>` subtitle string (around line 526): `(last count NNN, aiming to stay <500)` — bump NNN. If the new count would cross the 500 cap, raise both numbers in the same string (e.g. `(last count 512, aiming to stay <600)`); don't let the framing go stale.
 3. **Update category counts.** In the JS array near line 905 (`{ label: 'relationships', count: 189 }, …`). Add the per-category deltas.
 4. **Update author datalist** (around lines 551–847). If the author isn't already in the `<datalist id="authorsDatalist">`, append `<option value="handle">` near the bottom. The list is roughly sorted by tweet count — single-tweet authors live at the end.
