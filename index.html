@@ -1090,8 +1090,14 @@
         const focusModeRefreshBtn = document.getElementById('focusModeRefreshBtn');
 
         function renderRandomTweet(tweets = tweetsData) {
-            const randomTweet = getRandomTweet(tweets);
             const container = document.getElementById('tweetsContainer');
+
+            if (!tweets || tweets.length === 0) {
+                container.innerHTML = '<div class="tweet"><div class="tweet-content">No tweets match your filters.</div></div>';
+                return;
+            }
+
+            const randomTweet = getRandomTweet(tweets);
 
             container.innerHTML = '';
             const div = document.createElement('div');
