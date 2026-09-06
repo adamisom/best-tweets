@@ -544,7 +544,7 @@
             </div>
             <div class="control-group">
                 <label for="authorSearch">Author</label>
-                <input type="text" id="authorSearch" placeholder="username" list="authorsDatalist">
+                <input type="text" id="authorSearch" placeholder="username" list="authorsDatalist" autocomplete="off">
             </div>
         </div>
 
@@ -719,7 +719,6 @@
                     <option value="robertlasagna1">
                     <option value="ellebeecher">
                     <option value="tishray">
-                    <option value="Getinwithgame">
                     <option value="nataliegwinters">
                     <option value="emilykmay">
                     <option value="vitalitymaxing">
@@ -1014,11 +1013,36 @@
             return shuffled;
         }
 
-        document.getElementById('authorSearch').addEventListener('input', filterTweets);
-        document.getElementById('authorSearch').addEventListener('dblclick', (e) => {
+        const authorInput = document.getElementById('authorSearch');
+        const authorOptions = [...new Set(
+            [...document.querySelectorAll('#authorsDatalist option')].map(o => o.value.toLowerCase())
+        )];
+
+        // Chrome pops the suggestion list on every click, so a field already holding
+        // a full handle gets a one-entry dropdown that offers nothing. Detach the
+        // datalist whenever it would show fewer than two names, reattach when typing
+        // makes it useful again.
+        function syncAuthorSuggestions() {
+            const typed = authorInput.value.trim().toLowerCase();
+            const useful = typed === '' || authorOptions.filter(o => o.includes(typed)).length > 1;
+            if (useful === authorInput.hasAttribute('list')) return;
+            if (useful) {
+                authorInput.setAttribute('list', 'authorsDatalist');
+            } else {
+                authorInput.removeAttribute('list');
+            }
+        }
+
+        authorInput.addEventListener('input', () => {
+            filterTweets();
+            syncAuthorSuggestions();
+        });
+        authorInput.addEventListener('dblclick', (e) => {
             e.target.value = '';
             filterTweets();
+            syncAuthorSuggestions();
         });
+        syncAuthorSuggestions();
         document.getElementById('categoryFilter').addEventListener('change', filterTweets);
         document.getElementById('keywordSearch').addEventListener('input', filterTweets);
 
