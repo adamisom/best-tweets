@@ -1018,12 +1018,6 @@
         document.getElementById('authorSearch').addEventListener('dblclick', (e) => {
             e.target.value = '';
             filterTweets();
-            // Reopen the suggestion list so clearing and re-picking is one gesture.
-            // showPicker() is Chromium-only for datalist inputs, and throws if the
-            // browser doesn't count this as a user gesture, so it stays optional.
-            try {
-                e.target.showPicker?.();
-            } catch (err) {}
         });
         document.getElementById('categoryFilter').addEventListener('change', filterTweets);
         document.getElementById('keywordSearch').addEventListener('input', filterTweets);
