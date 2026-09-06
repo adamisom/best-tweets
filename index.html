@@ -975,14 +975,14 @@
         }
 
         function filterTweets() {
-            const author = document.getElementById('authorSearch').value.toLowerCase().replace('@', '');
+            const author = normalizeHandle(document.getElementById('authorSearch').value);
             const category = document.getElementById('categoryFilter').value;
             const keyword = document.getElementById('keywordSearch').value.toLowerCase().trim().replace(/\s+/g, ' ');
             const savedOnly = document.getElementById('savedFilterBtn').classList.contains('active');
             const savedTweets = JSON.parse(localStorage.getItem('savedTweets') || '[]');
 
             const filtered = tweetsData.filter(tweet => {
-                const matchAuthor = !author || tweet.author.toLowerCase().includes(author);
+                const matchAuthor = !author || normalizeHandle(tweet.author).includes(author);
                 const matchCategory = !category || tweet.category === category;
                 const matchKeyword = !keyword || tweet.content.toLowerCase().includes(keyword) || tweet.author.toLowerCase().includes(keyword);
                 const matchSaved = !savedOnly || savedTweets.includes(tweet.url);
@@ -991,6 +991,12 @@
 
             renderTweets(filtered);
             updateCategoryOptions();
+        }
+
+        // Handles are compared with punctuation stripped, so "adamisom", "@adam__isom"
+        // and a stray autofilled space all still match the stored "adam__isom".
+        function normalizeHandle(s) {
+            return s.toLowerCase().replace(/[^a-z0-9]/g, '');
         }
 
         function escapeHtml(text) {
@@ -1009,6 +1015,10 @@
         }
 
         document.getElementById('authorSearch').addEventListener('input', filterTweets);
+        document.getElementById('authorSearch').addEventListener('dblclick', (e) => {
+            e.target.value = '';
+            filterTweets();
+        });
         document.getElementById('categoryFilter').addEventListener('change', filterTweets);
         document.getElementById('keywordSearch').addEventListener('input', filterTweets);
 
@@ -1071,14 +1081,14 @@
         }
 
         function getFilteredTweets() {
-            const author = document.getElementById('authorSearch').value.toLowerCase().replace('@', '');
+            const author = normalizeHandle(document.getElementById('authorSearch').value);
             const category = document.getElementById('categoryFilter').value;
             const keyword = document.getElementById('keywordSearch').value.toLowerCase().trim().replace(/\s+/g, ' ');
             const savedOnly = document.getElementById('savedFilterBtn').classList.contains('active');
             const savedTweets = JSON.parse(localStorage.getItem('savedTweets') || '[]');
 
             return tweetsData.filter(tweet => {
-                const matchAuthor = !author || tweet.author.toLowerCase().includes(author);
+                const matchAuthor = !author || normalizeHandle(tweet.author).includes(author);
                 const matchCategory = !category || tweet.category === category;
                 const matchKeyword = !keyword || tweet.content.toLowerCase().includes(keyword) || tweet.author.toLowerCase().includes(keyword);
                 const matchSaved = !savedOnly || savedTweets.includes(tweet.url);
