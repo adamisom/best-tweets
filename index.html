@@ -206,21 +206,60 @@
             transition: border-color 0.2s;
         }
 
+        .kaomoji-hint {
+            margin-left: -14px;
+            display: inline-flex;
+            align-items: flex-end;
+            color: #dadada;
+            white-space: nowrap;
+        }
+
+        .kaomoji-hint svg {
+            position: relative;
+            top: 0;
+        }
+
+        .kaomoji-hint-text {
+            position: relative;
+            top: 1px;
+            margin-left: 2px;
+            font-size: 0.55em;
+            color: #c0c0c0;
+            letter-spacing: 0.03em;
+            transform: rotate(-3deg);
+            transform-origin: left center;
+        }
+
+        html.focus-mode .kaomoji-hint {
+            display: none;
+        }
+
+        .cycle-glyph {
+            display: inline-block;
+            white-space: pre;
+            font-size: 7px;
+            line-height: 1;
+            text-align: left;
+            vertical-align: middle;
+            position: relative;
+            top: -3px;
+        }
+
         select {
-            padding-right: 40px;
             -webkit-appearance: none;
             appearance: none;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%232a2a2a' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+            padding-right: 36px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='%23999' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
             background-repeat: no-repeat;
             background-position: right 16px center;
-            background-size: 12px 8px;
+            background-size: 10px 6px;
         }
 
         html.dark-mode select {
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%23f5e6d3' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='%23a89d8f' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
             background-repeat: no-repeat;
             background-position: right 16px center;
-            background-size: 12px 8px;
+            background-size: 10px 6px;
         }
 
         input:focus, select:focus {
@@ -254,6 +293,7 @@
         }
 
         .saved-filter-btn {
+            min-width: 6.4em;
             background: none;
             border: 1px solid #ddd;
             cursor: pointer;
@@ -542,7 +582,7 @@
         <div class="controls">
             <div class="control-group">
                 <label for="keywordSearch">Keyword</label>
-                <input type="text" id="keywordSearch" placeholder="Search...">
+                <input type="text" id="keywordSearch" placeholder="start typing...">
             </div>
             <div class="control-group">
                 <label for="categoryFilter">category (AI)</label>
@@ -557,7 +597,7 @@
             </div>
             <div class="control-group">
                 <label for="authorSearch">Author</label>
-                <input type="text" id="authorSearch" placeholder="username" list="authorsDatalist" autocomplete="off">
+                <input type="text" id="authorSearch" placeholder="start typing a handle" list="authorsDatalist" autocomplete="off">
             </div>
         </div>
 
@@ -914,7 +954,12 @@
             <button id="savedFilterBtn" class="saved-filter-btn">Saved only</button>
             <div id="matchCount" style="display: none; font-size: 0.9em; font-style: italic; color: #999;"></div>
             <button class="focus-mode-btn focus-mode-btn-small" id="focusModeBtnSmall" aria-label="Toggle focus mode" title="focus/random"><span class="focus-mode-btn-emoji">⋆｡ °✩🎧˚☽˚｡⋆</span></button>
-            <button class="focus-mode-btn focus-mode-refresh-btn" id="focusModeRefreshBtn" aria-label="Next tweet" style="display: none; margin-left: 20px; font-size: 1.3em;">🔄</button>
+            <span class="kaomoji-hint" aria-hidden="true"><svg width="56" height="16" viewBox="0 0 56 16" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M52 12C40 8 22 4.5 6 5M10.9 7.4L6 5l4.8-2.7"/></svg><span class="kaomoji-hint-text">click me!</span></span>
+            <button class="focus-mode-btn focus-mode-refresh-btn" id="focusModeRefreshBtn" aria-label="Next tweet" style="display: none; margin-left: 20px;"><span class="cycle-glyph" aria-hidden="true">⠀⠀⢀⣀⣦⡀⠀⠀
+⢀⣾⡿⠛⠟⠁⣀⡀
+⢸⣿⠀⠀⠀⠀⣿⡇
+⠈⠉⢀⣴⣤⣾⡿⠁
+⠀⠀⠈⠻⠉⠁⠀⠀</span></button>
         </div>
         <div id="tweetsContainer" class="tweets-container"></div>
         <div id="emptyState" class="empty-state" style="display: none;">
@@ -1082,6 +1127,7 @@
 
         document.getElementById('savedFilterBtn').addEventListener('click', (e) => {
             e.target.classList.toggle('active');
+            e.target.textContent = e.target.classList.contains('active') ? 'See all' : 'Saved only';
             filterTweets();
         });
 
