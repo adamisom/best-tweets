@@ -4,7 +4,8 @@
   "description": "~500 curated tweets about relationships, growth, wisdom, and life.",
   "scripts": {
     "embed": "node embed.mjs",
-    "eval": "node eval/run.mjs"
+    "eval": "node eval/run.mjs",
+    "ask": "node --env-file-if-exists=.env ask.mjs"
   },
   "repository": {
     "type": "git",
@@ -19,7 +20,9 @@
   "homepage": "https://github.com/adamisom/best-tweets#readme",
   "private": true,
   "dependencies": {
-    "@huggingface/transformers": "^4.3.0"
+    "@anthropic-ai/sdk": "^0.131.0",
+    "@huggingface/transformers": "^4.3.0",
+    "zod": "^4.6.5"
   },
   "type": "module"
 }

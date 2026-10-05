@@ -5,7 +5,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { makeRankers, readQueries } from './rankers.mjs';
+import { makeRankers, readQueries } from '../lib/rankers.mjs';
 
 const POOL_DEPTH = 15;
 const dir = path.dirname(fileURLToPath(import.meta.url));

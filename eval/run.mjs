@@ -1,15 +1,17 @@
 // Scores the three rankers against your labels.
 // Recall at 10 = of the tweets you marked relevant for a query, the share that
 // appear in the method's top 10. Averaged over queries.
-// Usage: npm run eval   (reads eval/labels.json)
+// Usage: npm run eval [-- --labels labels-adam.json] [-- --misses]   (default eval/labels.json)
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { makeRankers } from './rankers.mjs';
+import { makeRankers } from '../lib/rankers.mjs';
 
 const K = 10;
 const dir = path.dirname(fileURLToPath(import.meta.url));
-const labels = JSON.parse(fs.readFileSync(path.join(dir, 'labels.json'), 'utf8'))
+const arg = process.argv.indexOf('--labels');
+const labelFile = arg > -1 ? process.argv[arg + 1] : 'labels.json';
+const labels = JSON.parse(fs.readFileSync(path.join(dir, labelFile), 'utf8'))
     .filter(l => l.relevant.length > 0);
 const { tweets, rankers } = await makeRankers();
 const text = new Map(tweets.map(t => [t.url, t.content]));

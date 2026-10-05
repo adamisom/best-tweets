@@ -41,7 +41,10 @@
     <div id="found"></div>
 </main>
 <script>
-    const STORE = 'eval-labels';
+    // ?calibration shows only the queries in calibration.json, for checking the LLM judge.
+    const CALIBRATION = new URLSearchParams(location.search).has('calibration');
+    const STORE = CALIBRATION ? 'eval-labels-calibration' : 'eval-labels';
+    const OUTFILE = CALIBRATION ? 'labels-adam.json' : 'labels.json';
     let pool, tweets, byUrl, at = 0;
     let labels = {};
     try { labels = JSON.parse(localStorage.getItem(STORE) || '{}'); } catch {}
@@ -103,7 +106,7 @@
         const data = pool.map(p => ({ query: p.query, relevant: labels[p.query] || [] }));
         const a = document.createElement('a');
         a.href = URL.createObjectURL(new Blob([JSON.stringify(data, null, 1) + '\n'], { type: 'application/json' }));
-        a.download = 'labels.json';
+        a.download = OUTFILE;
         a.click();
     };
 
@@ -113,6 +116,11 @@
         tweets = new Function('return ' + arr.replace('tweetsData =', '').replace(/;$/, ''))();
         byUrl = new Map(tweets.map(t => [t.url, t]));
         pool = await fetch('pool.json').then(r => r.json());
+        if (CALIBRATION) {
+            const keep = new Set(await fetch('calibration.json').then(r => r.json()));
+            pool = pool.filter(p => keep.has(p.query));
+        }
+        document.getElementById('download').textContent = 'download ' + OUTFILE;
         render();
     })();
 </script>

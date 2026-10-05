@@ -588,9 +588,7 @@
                 <label for="searchMode">Match</label>
                 <select id="searchMode">
                     <option value="exact">exact</option>
-                    <option value="bm25">ranked words</option>
                     <option value="semantic">meaning</option>
-                    <option value="hybrid">hybrid</option>
                 </select>
             </div>
             <div class="control-group">
@@ -4766,7 +4764,8 @@ tweetsData = shuffleArray(tweetsData);
             return rank(bm25.scores(query), { minScore: 0 }).map(i => tweetsData[i].url);
         }
 
-        // Returns tweet urls, most relevant first.
+        // Returns tweet urls, most relevant first. The page offers only 'semantic' (it won
+        // the eval; see SEARCH.md); bm25 and hybrid stay callable for comparing in the console.
         window.rankTweets = async (mode, query, onStatus = () => {}) => {
             if (mode === 'bm25') return bm25Ranking(query);
             const semantic = await semanticRanking(query, onStatus);
