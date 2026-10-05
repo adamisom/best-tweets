@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Label eval queries</title>
+<style>
+    :root { --bg: #fafaf8; --fg: #2a2a2a; --muted: #999; --line: #e0e0e0; --pick: #fff6d6; --pick-line: #e0b84a; }
+    @media (prefers-color-scheme: dark) {
+        :root { --bg: #1a1a1a; --fg: #e0e0e0; --muted: #888; --line: #333; --pick: #3a3320; --pick-line: #b8963a; }
+    }
+    body { background: var(--bg); color: var(--fg); font: 16px/1.5 Georgia, serif; max-width: 760px; margin: 0 auto; padding: 16px; }
+    header { position: sticky; top: 0; background: var(--bg); padding: 8px 0 12px; border-bottom: 1px solid var(--line); }
+    h1 { font-size: 1.4em; margin: 0 0 4px; }
+    .hint, .progress { color: var(--muted); font-size: 0.85em; }
+    nav { display: flex; gap: 8px; margin-top: 8px; flex-wrap: wrap; }
+    button { font: inherit; font-size: 0.9em; padding: 4px 12px; cursor: pointer; }
+    .tweet { border: 1px solid var(--line); padding: 10px 12px; margin: 10px 0; cursor: pointer; border-radius: 2px; }
+    .tweet.on { background: var(--pick); border-color: var(--pick-line); }
+    .tweet .by { color: var(--muted); font-size: 0.8em; }
+    .added { font-size: 0.8em; color: var(--pick-line); }
+    input[type=text] { font: inherit; width: 100%; box-sizing: border-box; padding: 6px 10px; }
+    h2 { font-size: 1em; margin: 24px 0 4px; color: var(--muted); font-weight: normal; }
+</style>
+</head>
+<body>
+<header>
+    <h1 id="query"></h1>
+    <div class="progress" id="progress"></div>
+    <div class="hint">Click every tweet you'd want in front of you if you searched this. Saved in this browser as you go.</div>
+    <nav>
+        <button id="prev">← prev</button>
+        <button id="next">next →</button>
+        <button id="download">download labels.json</button>
+    </nav>
+</header>
+<main>
+    <div id="candidates"></div>
+    <h2>Missing one you remember? Find it by a word it uses:</h2>
+    <input type="text" id="find" placeholder="type a word or two">
+    <div id="found"></div>
+</main>
+<script>
+    const STORE = 'eval-labels';
+    let pool, tweets, byUrl, at = 0;
+    let labels = {};
+    try { labels = JSON.parse(localStorage.getItem(STORE) || '{}'); } catch {}
+
+    const save = () => { try { localStorage.setItem(STORE, JSON.stringify(labels)); } catch {} };
+    const picked = q => (labels[q] ??= []);
+
+    function tweetEl(url, extraNote) {
+        const t = byUrl.get(url);
+        const q = pool[at].query;
+        const el = document.createElement('div');
+        el.className = 'tweet' + (picked(q).includes(url) ? ' on' : '');
+        el.innerHTML = `<div></div><div class="by"></div>`;
+        el.children[0].textContent = t.content;
+        el.children[1].textContent = '@' + t.author + (extraNote ? ' · ' + extraNote : '');
+        el.onclick = () => {
+            const list = picked(q);
+            const i = list.indexOf(url);
+            if (i > -1) list.splice(i, 1); else list.push(url);
+            el.classList.toggle('on');
+            save();
+            render();
+        };
+        return el;
+    }
+
+    function render() {
+        const { query, candidates } = pool[at];
+        document.getElementById('query').textContent = `"${query}"`;
+        const done = pool.filter(p => labels[p.query]?.length).length;
+        document.getElementById('progress').textContent =
+            `query ${at + 1} of ${pool.length} · ${picked(query).length} marked here · ${done} queries have at least one`;
+        const box = document.getElementById('candidates');
+        box.replaceChildren(...candidates.map(u => tweetEl(u)));
+        // Tweets added by hand (outside the pool) show at the bottom.
+        const extra = picked(query).filter(u => !candidates.includes(u));
+        box.append(...extra.map(u => tweetEl(u, 'added by hand')));
+    }
+
+    function go(step) {
+        at = Math.max(0, Math.min(pool.length - 1, at + step));
+        document.getElementById('find').value = '';
+        document.getElementById('found').replaceChildren();
+        render();
+        window.scrollTo(0, 0);
+    }
+
+    document.getElementById('prev').onclick = () => go(-1);
+    document.getElementById('next').onclick = () => go(1);
+    document.getElementById('find').oninput = e => {
+        const w = e.target.value.toLowerCase().trim();
+        const out = document.getElementById('found');
+        if (w.length < 3) return out.replaceChildren();
+        const inPool = new Set(pool[at].candidates);
+        const hits = tweets.filter(t => !inPool.has(t.url) && t.content.toLowerCase().includes(w)).slice(0, 15);
+        out.replaceChildren(...hits.map(t => tweetEl(t.url)));
+    };
+    document.getElementById('download').onclick = () => {
+        const data = pool.map(p => ({ query: p.query, relevant: labels[p.query] || [] }));
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(new Blob([JSON.stringify(data, null, 1) + '\n'], { type: 'application/json' }));
+        a.download = 'labels.json';
+        a.click();
+    };
+
+    (async () => {
+        const html = await fetch('../index.html').then(r => r.text());
+        const arr = html.match(/tweetsData = \[[\s\S]*?\n\];/)[0];
+        tweets = new Function('return ' + arr.replace('tweetsData =', '').replace(/;$/, ''))();
+        byUrl = new Map(tweets.map(t => [t.url, t]));
+        pool = await fetch('pool.json').then(r => r.json());
+        render();
+    })();
+</script>
+</body>
+</html>

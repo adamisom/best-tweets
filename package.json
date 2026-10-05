@@ -1,0 +1,25 @@
+{
+  "name": "best-tweets",
+  "version": "1.0.0",
+  "description": "~500 curated tweets about relationships, growth, wisdom, and life.",
+  "scripts": {
+    "embed": "node embed.mjs",
+    "eval": "node eval/run.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adamisom/best-tweets.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adamisom/best-tweets/issues"
+  },
+  "homepage": "https://github.com/adamisom/best-tweets#readme",
+  "private": true,
+  "dependencies": {
+    "@huggingface/transformers": "^4.3.0"
+  },
+  "type": "module"
+}

@@ -585,6 +585,15 @@
                 <input type="text" id="keywordSearch" placeholder="start typing...">
             </div>
             <div class="control-group">
+                <label for="searchMode">Match</label>
+                <select id="searchMode">
+                    <option value="exact">exact</option>
+                    <option value="bm25">ranked words</option>
+                    <option value="semantic">meaning</option>
+                    <option value="hybrid">hybrid</option>
+                </select>
+            </div>
+            <div class="control-group">
                 <label for="categoryFilter">category (AI)</label>
                 <select id="categoryFilter">
                     <option value="">(all)</option>
@@ -1035,23 +1044,51 @@
             categorySelect.value = currentValue;
         }
 
+        // Ranked modes (bm25, semantic, hybrid) sort by relevance and show the top
+        // RANKED_LIMIT; rankTweets is defined by the module script at the bottom.
+        const RANKED_LIMIT = 30;
+        let rankRequest = 0;
+        let rankTimer;
+
         function filterTweets() {
             const author = normalizeHandle(document.getElementById('authorSearch').value);
             const category = document.getElementById('categoryFilter').value;
             const keyword = document.getElementById('keywordSearch').value.toLowerCase().trim().replace(/\s+/g, ' ');
+            const mode = document.getElementById('searchMode').value;
+            const ranked = mode !== 'exact' && keyword;
             const savedOnly = document.getElementById('savedFilterBtn').classList.contains('active');
             const savedTweets = JSON.parse(localStorage.getItem('savedTweets') || '[]');
 
             const filtered = tweetsData.filter(tweet => {
                 const matchAuthor = !author || normalizeHandle(tweet.author).includes(author);
                 const matchCategory = !category || tweet.category === category;
-                const matchKeyword = !keyword || tweet.content.toLowerCase().includes(keyword) || tweet.author.toLowerCase().includes(keyword);
+                const matchKeyword = ranked || !keyword || tweet.content.toLowerCase().includes(keyword) || tweet.author.toLowerCase().includes(keyword);
                 const matchSaved = !savedOnly || savedTweets.includes(tweet.url);
                 return matchAuthor && matchCategory && matchKeyword && matchSaved;
             });
 
-            renderTweets(filtered);
             updateCategoryOptions();
+            if (!ranked) {
+                rankRequest++;
+                renderTweets(filtered);
+                return;
+            }
+
+            // Wait for a pause in typing, and drop answers to queries that are no longer current.
+            const request = ++rankRequest;
+            clearTimeout(rankTimer);
+            rankTimer = setTimeout(async () => {
+                const allowed = new Set(filtered.map(t => t.url));
+                const urls = await window.rankTweets(mode, keyword, status => {
+                    if (request !== rankRequest) return;
+                    const el = document.getElementById('matchCount');
+                    el.textContent = status;
+                    el.style.display = 'block';
+                });
+                if (request !== rankRequest) return;
+                const byUrl = new Map(tweetsData.map(t => [t.url, t]));
+                renderTweets(urls.filter(u => allowed.has(u)).slice(0, RANKED_LIMIT).map(u => byUrl.get(u)));
+            }, 150);
         }
 
         // Handles are compared with punctuation stripped, so "adamisom", "@adam__isom"
@@ -1107,6 +1144,7 @@
         syncAuthorSuggestions();
         document.getElementById('categoryFilter').addEventListener('change', filterTweets);
         document.getElementById('keywordSearch').addEventListener('input', filterTweets);
+        document.getElementById('searchMode').addEventListener('change', filterTweets);
 
         document.getElementById('tweetsContainer').addEventListener('click', (e) => {
             if (e.target.classList.contains('tweet-save')) {
@@ -4681,6 +4719,60 @@ tweetsData = shuffleArray(tweetsData);
                 toggleFocusMode();
             }, 100);
         }
+    </script>
+    <script type="module">
+        // Ranked search. Tweet vectors are made offline by embed.mjs; the query is
+        // embedded here, in the browser, with the same model (search-config.js).
+        import { MODEL, DTYPE, DIM, embedText } from './search-config.js';
+        import { BM25, cosineScores, rank, rrf } from './search.js';
+
+        let bm25, vectorsPromise, embedderPromise;
+
+        // Tweet vectors, reordered to match tweetsData (which is shuffled on load).
+        // Tweets added since the last embed run have no vector and are left out of meaning search.
+        function loadVectors() {
+            return vectorsPromise ??= Promise.all([
+                fetch('vectors-meta.json').then(r => r.json()),
+                fetch('vectors.bin').then(r => r.arrayBuffer()),
+            ]).then(([meta, buf]) => {
+                const all = new Float32Array(buf);
+                const row = new Map(meta.urls.map((u, i) => [u, i]));
+                const urls = tweetsData.map(t => t.url).filter(u => row.has(u));
+                const matrix = new Float32Array(urls.length * DIM);
+                urls.forEach((u, i) => matrix.set(all.subarray(row.get(u) * DIM, (row.get(u) + 1) * DIM), i * DIM));
+                const missing = tweetsData.length - urls.length;
+                if (missing) console.warn(`${missing} tweets have no vector; run npm run embed`);
+                return { urls, matrix };
+            });
+        }
+
+        // The model downloads once (~23 MB), then the browser caches it.
+        function loadEmbedder(onStatus) {
+            return embedderPromise ??= (async () => {
+                onStatus('loading the meaning model (about 23 MB, first time only)...');
+                const { pipeline } = await import('https://cdn.jsdelivr.net/npm/@huggingface/transformers@4.3.0');
+                return pipeline('feature-extraction', MODEL, { dtype: DTYPE });
+            })();
+        }
+
+        async function semanticRanking(query, onStatus) {
+            const [embed, { urls, matrix }] = await Promise.all([loadEmbedder(onStatus), loadVectors()]);
+            const out = await embed(query, { pooling: 'mean', normalize: true });
+            return rank(cosineScores(out.data, matrix, DIM)).map(i => urls[i]);
+        }
+
+        function bm25Ranking(query) {
+            bm25 ??= new BM25(tweetsData.map(t => embedText(t.content)));
+            return rank(bm25.scores(query), { minScore: 0 }).map(i => tweetsData[i].url);
+        }
+
+        // Returns tweet urls, most relevant first.
+        window.rankTweets = async (mode, query, onStatus = () => {}) => {
+            if (mode === 'bm25') return bm25Ranking(query);
+            const semantic = await semanticRanking(query, onStatus);
+            if (mode === 'semantic') return semantic;
+            return rrf([bm25Ranking(query), semantic]);
+        };
     </script>
 </body>
 </html>
