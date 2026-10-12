@@ -6,7 +6,7 @@ The site has a search mode called "meaning". You type what you're looking for in
 
 You need your saved tweets (or notes, or quotes) as a list of text, a computer with Node.js, and a static page to show them.
 
-1. **Turn each tweet into a list of numbers.** An embedding model reads a piece of text and returns a fixed list of numbers (here, 384 of them) that places texts with similar meanings close together. I used all-MiniLM-L6-v2, a small free model, run on my laptop with the transformers.js library. All 571 of my tweets took about ten seconds, and the vectors came to 857 KB.
+1. **Turn each tweet into a list of numbers.** An embedding model reads a piece of text and returns a fixed list of numbers (here, 384 of them) that places texts with similar meanings close together. I used all-MiniLM-L6-v2, a small free model, run on my laptop with the transformers.js library. All 574 of my tweets took about ten seconds, and the vectors came to 861 KB.
 2. **Ship the numbers with the page.** I saved them as one binary file next to index.html, so the site loads them like an image.
 3. **Turn the search box text into numbers in the browser.** The page downloads the same model the first time someone searches by meaning, about 23 MB, and the browser caches it after that. Each search then takes a few milliseconds.
 4. **Sort by closeness.** Cosine similarity scores how close two lists of numbers point, and the page shows the 30 highest scores. Because the vectors are scaled to length 1, cosine similarity is just a sum of products, which is a short loop in JavaScript.
@@ -33,7 +33,7 @@ The eval asks one question: for a set of realistic queries, how many of the good
 
 I wrote 30 queries in three kinds. Some use words a tweet uses ("courage"), some paraphrase a tweet's idea ("invite people over more often"), and some name only a concept ("feeling alive").
 
-For each query, I needed to know which tweets are good results. Judging all 571 tweets for each query would take too long, so I used pooling, the usual shortcut. For each query, I took the top 15 from BM25 and the top 15 from meaning search, merged them (about 24 tweets per query, 707 in all), and shuffled them so the judge could not tell which method found which tweet. A tweet outside the pool counts as not relevant.
+For each query, I needed to know which tweets are good results. Judging all 574 tweets for each query would take too long, so I used pooling, the usual shortcut. For each query, I took the top 15 from BM25 and the top 15 from meaning search, merged them (about 24 tweets per query, 707 in all), and shuffled them so the judge could not tell which method found which tweet. A tweet outside the pool counts as not relevant.
 
 ### Who judged relevance, and how I checked the judge
 
@@ -47,9 +47,9 @@ I rewrote the rubric to judge by the need behind the query (eval/judge-rubric.md
 
 | Labels | Queries | Keyword (BM25) | Meaning | Hybrid |
 |---|---|---|---|---|
-| Claude, rubric v2 (the main result) | 30 | 0.373 | 0.657 | 0.569 |
-| Claude, rubric v1 | 30 | 0.467 | 0.715 | 0.617 |
-| Mine | 6 | 0.324 | 0.658 | 0.493 |
+| Claude, rubric v2 (the main result) | 30 | 0.373 | 0.650 | 0.569 |
+| Claude, rubric v1 | 30 | 0.467 | 0.709 | 0.617 |
+| Mine | 6 | 0.324 | 0.658 | 0.484 |
 
 Meaning search wins under all three sets of labels, by a wide margin. Its score also barely changes between the sets, so the result doesn't depend on whose labels I use. Meaning search does best on queries whose good tweets use different words. For "afraid to talk to a pretty girl", on my labels, meaning search found 7 of my 8 good tweets, and keyword and hybrid search each found 1.
 
@@ -59,6 +59,7 @@ Some limits apply to these numbers:
 
 - With 30 queries, a difference of a few hundredths is noise. The gap between meaning and keyword search is about 0.28, which is not.
 - Pooling flatters both methods a little, because a good tweet that neither method found counts as not relevant. When I labeled, I could search for tweets I remembered, and I found none outside the pool.
+- Tweets I add after the labeling were never judged, so they count as not relevant until I label them. Three tweets added on 10/12 moved meaning search from 0.657 to 0.650.
 - One query has more good tweets than fit in a top 10 ("marriage and kids" has 22 under rubric v2), so its recall can't reach 1.0 for any method.
 - Giving BM25 less weight in the fusion might help hybrid search, but tuning that weight on these 30 queries would overfit them. It would need a fresh set of queries to test on.
 
