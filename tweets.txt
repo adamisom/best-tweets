@@ -9,10 +9,10 @@ tag (#...), then the author as (@handle).
 If you're talking to Adam: he maintains a "second brain" at ~/sb. He may want you
 to read it for additional context — feel free to ask, or look there if relevant.
 
-Category counts (584 tweets total):
-  #relationships  255
-  #growth         171
-  #wisdom         82
+Category counts (592 tweets total):
+  #relationships  257
+  #growth         175
+  #wisdom         84
   #beauty         44
   #misc           32
 
@@ -602,3 +602,11 @@ My boyfriend thinks the big problem with modern dating is that men used to merel
 [image] "Life shrinks or expands according to one's courage." -Anaïs Nin, 1939 #growth (@maxyourenergy)
 Women just want to be seen so badly. If you ever want to make a girl happy, don’t focus on impressing her all the time. Make her feel impressive too. Caring about what she cares about is a massive advantage because it’s rare. #relationships (@honeyNonABG)
 my life has changed dramatically every year by exercising this thesis vigorously [QT of Tim Denning: “Friendly reminder: the world is run by high agency people, not smart people. Stop consuming information and start taking insane levels of action.”] #growth (@sanyatimar)
+Adulthood is being 100% responsible for things that are only 75% under your control #wisdom (@GilberteDSL)
+The heaviest thing in any room is the conversation two people are actively choosing not to have #relationships (@verseweave)
+For every skill, you need to get over the “caricature version” of the skill before you can get good. Everyone starts aspiring toward and idealistic vision of mastery that is far off from reality. / Programmers think that their craft is about learning Rust, mastering vim and mechanical keyboards / CEOs think their job is to pound their fist on the desk demanding better work based on an incomplete picture of Steve Jobs / Designers get over-ambitious, using too many elements, effects and striving for too much originality / Investors think their job is to understand the “fundamentals” and quantitative data deeply, and lose sight of the qualitative #growth (@scottastevenson)
+the number one predictor of success in any field is willingness and ability to make many attempts with little to no reward signal--often outright failures #growth (@ZyMazza)
+People (often losers) say "never give up" advice is survivorship bias [...] But then you get in the real world and you see how lazy people are and you realize that persistence actually is the bar #growth (@realwesmyers)
+Underrated life advice: Have more hobbies & fewer opinions. Learn an instrument. Plant a garden. Build something with your hands. Cook. Paint. Run. The happiest people I know spend less time debating life and more time actually living it. #growth (@blakeaburge)
+the primary social danger chatbots present is that they turn people inwards towards themselves, when we're created to exist in community #relationships (@melodyskim)
+As a younger man it was tough to leave the bed before the sun was up with wifey in bed next to me / Meditations and Marcus Aurelius words always ring true / “At dawn, when you have trouble getting out of bed, tell yourself: ‘I have to go to work—as a human being. What do I have to complain of, if I’m going to do what I was born for—the things I was brought into the world to do? Or is this what I was created for? To huddle under the blankets and stay warm?’” #wisdom (@bitcoinPalmer)
