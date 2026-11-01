@@ -631,6 +631,23 @@
                 font-size: 1.8em;
             }
         }
+
+        /* Ask the tweets: an answer from a small model in the browser (see DESIGN.md) */
+        .ask-panel { margin: 0 0 24px; padding: 16px 0; border-bottom: 1px solid #e8e8e8; }
+        .ask-btn { font-family: inherit; font-size: 0.9em; padding: 6px 14px; border: 1px solid #ccc; background: white; color: #2a2a2a; border-radius: 2px; cursor: pointer; }
+        .ask-btn:disabled { opacity: 0.5; cursor: default; }
+        .ask-note, .ask-status { font-size: 0.85em; font-style: italic; color: #999; margin-left: 10px; }
+        .ask-answer { margin-top: 14px; line-height: 1.6; white-space: pre-wrap; }
+        .ask-answer a.cite { text-decoration: none; font-size: 0.85em; vertical-align: super; }
+        .ask-answer .cite-bad { color: #c0392b; font-size: 0.85em; vertical-align: super; }
+        .ask-sources { margin: 12px 0 0; padding-left: 0; list-style: none; font-size: 0.85em; color: #666; }
+        .ask-sources li { margin: 4px 0; }
+        .ask-sources li:target { background: #fff6d6; }
+        html.dark-mode .ask-panel { border-bottom-color: #444; }
+        html.dark-mode .ask-btn { background: #2a2a2a; color: #e0e0e0; border-color: #555; }
+        html.dark-mode .ask-sources { color: #aaa; }
+        html.dark-mode .ask-sources li:target { background: #3a3320; }
+        html.focus-mode .ask-panel { display: none !important; }
     </style>
 </head>
 <body>
@@ -1047,6 +1064,11 @@
 ⠈⠉⢀⣴⣤⣾⡿⠁
 ⠀⠀⠈⠻⠉⠁⠀⠀</span></button>
         </div>
+        <div id="askPanel" class="ask-panel" style="display: none;">
+            <button id="askBtn" class="ask-btn">Ask the tweets</button><span id="askNote" class="ask-note"></span><span id="askStatus" class="ask-status"></span>
+            <div id="askAnswer" class="ask-answer"></div>
+            <ol id="askSources" class="ask-sources"></ol>
+        </div>
         <div id="tweetsContainer" class="tweets-container"></div>
         <div id="emptyState" class="empty-state" style="display: none;">
             <p>No tweets match your search.</p>
@@ -1132,6 +1154,7 @@
             const keyword = document.getElementById('keywordSearch').value.toLowerCase().trim().replace(/\s+/g, ' ');
             const mode = document.getElementById('searchMode').value;
             const ranked = mode !== 'exact' && keyword;
+            document.getElementById('askPanel').style.display = mode === 'semantic' && keyword ? 'block' : 'none';
             const savedOnly = document.getElementById('savedFilterBtn').classList.contains('active');
             const savedTweets = JSON.parse(localStorage.getItem('savedTweets') || '[]');
 
@@ -4937,10 +4960,13 @@ tweetsData = shuffleArray(tweetsData);
             })();
         }
 
+        // Tweet urls, best first; the array also carries topScore, the best cosine similarity.
         async function semanticRanking(query, onStatus) {
             const [embed, { urls, matrix }] = await Promise.all([loadEmbedder(onStatus), loadVectors()]);
             const out = await embed(query, { pooling: 'mean', normalize: true });
-            return rank(cosineScores(out.data, matrix, DIM)).map(i => urls[i]);
+            const scores = cosineScores(out.data, matrix, DIM);
+            const order = rank(scores);
+            return Object.assign(order.map(i => urls[i]), { topScore: scores[order[0]] });
         }
 
         function bm25Ranking(query) {
@@ -4956,6 +4982,115 @@ tweetsData = shuffleArray(tweetsData);
             if (mode === 'semantic') return semantic;
             return rrf([bm25Ranking(query), semantic]);
         };
+
+        // ---------- Ask the tweets (retrieval augmented generation, all in the browser) ----------
+        // Retrieve the top K tweets by meaning, give them to a small model with the shared
+        // prompt (rag-config.js), and stream its answer. See DESIGN.md.
+        import { GEN_MODEL, GEN_DTYPE, GEN_MODEL_MB, K, MAX_NEW_TOKENS, SKIP_BELOW, NO_ANSWER, buildMessages, parseAnswer } from './rag-config.js';
+
+        const askBtn = document.getElementById('askBtn');
+        const askNote = document.getElementById('askNote');
+        const askStatus = document.getElementById('askStatus');
+        const askAnswer = document.getElementById('askAnswer');
+        const askSources = document.getElementById('askSources');
+        let generatorPromise, asking = false;
+
+        // WebGPU runs the model at a usable speed; without it, say so instead of offering the button.
+        const hasWebGPU = !!navigator.gpu && !!(await navigator.gpu.requestAdapter().catch(() => null));
+        if (!hasWebGPU) {
+            askBtn.disabled = true;
+            askNote.textContent = 'asking needs WebGPU (desktop Chrome or Edge)';
+        }
+
+        function loadGenerator() {
+            return generatorPromise ??= (async () => {
+                const { pipeline } = await import('https://cdn.jsdelivr.net/npm/@huggingface/transformers@4.3.0');
+                const loaded = {};
+                return pipeline('text-generation', GEN_MODEL, {
+                    dtype: GEN_DTYPE,
+                    device: 'webgpu',
+                    progress_callback: p => {
+                        if (p.status !== 'progress' || !p.total) return;
+                        loaded[p.file] = [p.loaded, p.total];
+                        const [got, total] = Object.values(loaded).reduce(([a, b], [x, y]) => [a + x, b + y], [0, 0]);
+                        askStatus.textContent = `downloading the answer model, ${Math.round(got / 1048576)} of ${Math.round(total / 1048576)} MB (first time only)`;
+                    },
+                });
+            })();
+        }
+
+        function escape(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        // Answer text with each [n] turned into a link to source n; numbers outside 1..K are flagged.
+        function renderAnswer(text) {
+            const shown = text.replace(/<think>[\s\S]*?(<\/think>|$)/g, '').trim();
+            askAnswer.innerHTML = escape(shown).replace(/\[([\d,\s]+)\]/g, (_, nums) =>
+                nums.split(',').map(n => parseInt(n, 10)).filter(n => !Number.isNaN(n)).map(n =>
+                    n >= 1 && n <= K
+                        ? `<a class="cite" href="#ask-source-${n}">[${n}]</a>`
+                        : `<span class="cite-bad" title="cites a tweet the model wasn't given">[${n}?]</span>`
+                ).join(''));
+        }
+
+        askBtn.addEventListener('click', async () => {
+            const question = document.getElementById('keywordSearch').value.trim();
+            if (!question || asking) return;
+            asking = true;
+            askBtn.disabled = true;
+            askAnswer.textContent = '';
+            askSources.innerHTML = '';
+            try {
+                askStatus.textContent = 'finding tweets...';
+                const byUrl = new Map(tweetsData.map(t => [t.url, t]));
+                const ranked = await semanticRanking(question, s => askStatus.textContent = s);
+                // When no tweet is close to the question, say so without running the model.
+                if (ranked.topScore < SKIP_BELOW) {
+                    askAnswer.textContent = NO_ANSWER;
+                    askStatus.textContent = 'no tweet is close enough to this question to answer from';
+                    return;
+                }
+                const context = ranked.slice(0, K).map(u => byUrl.get(u));
+                askSources.innerHTML = context.map((t, i) => {
+                    const text = t.content.replace('(<pangram-says-ai>)', '').trim();
+                    return `<li id="ask-source-${i + 1}">[${i + 1}] <a href="${t.url}">@${escape(t.author)}</a> ${escape(text.slice(0, 140))}${text.length > 140 ? '...' : ''}</li>`;
+                }).join('');
+
+                if (!generatorPromise) askStatus.textContent = `loading the answer model (about ${GEN_MODEL_MB} MB, first time only)...`;
+                const generate = await loadGenerator();
+                const { TextStreamer } = await import('https://cdn.jsdelivr.net/npm/@huggingface/transformers@4.3.0');
+                askStatus.textContent = 'writing...';
+                let text = '';
+                const start = performance.now();
+                const streamer = new TextStreamer(generate.tokenizer, {
+                    skip_prompt: true,
+                    skip_special_tokens: true,
+                    callback_function: piece => { text += piece; renderAnswer(text); },
+                });
+                await generate(buildMessages(question, context), { max_new_tokens: MAX_NEW_TOKENS, do_sample: false, streamer });
+                const { sentences } = parseAnswer(text);
+                const bad = sentences.flatMap(s => s.invalid).length;
+                askStatus.textContent = `answered in ${((performance.now() - start) / 1000).toFixed(1)} s by a small model in your browser` +
+                    (bad ? `; ${bad} citation(s) point to tweets it wasn't given` : '');
+            } catch (err) {
+                console.error(err);
+                askStatus.textContent = `couldn't answer: ${err.message}`;
+            } finally {
+                asking = false;
+                askBtn.disabled = !hasWebGPU;
+            }
+        });
+
+        // A new question clears the old answer.
+        document.getElementById('keywordSearch').addEventListener('input', () => {
+            if (asking) return;
+            askAnswer.textContent = '';
+            askSources.innerHTML = '';
+            askStatus.textContent = '';
+        });
     </script>
 </body>
 </html>

@@ -26,6 +26,10 @@ For every tweet added, do **all six**:
 5. **Regenerate `tweets.txt`.** It is a flat text view of every tweet, read by a persistent Claude chat, and `index.html` is the source of truth. After editing `index.html`, run `node sync-tweets-txt.cjs` from the repo root. It rewrites the counts header and every line, and it keeps the preamble at the top of the file. Commit it in the same commit as the `index.html` change so the two never drift.
 6. **Re-embed.** Run `npm run embed` (after `npm install` once). It rewrites `vectors.bin` and `vectors-meta.json`, which meaning search on the page reads. Commit them with the `index.html` change; a tweet without a vector is left out of meaning search.
 
+## Asking questions (RAG)
+
+The Ask feature and its eval are documented in DESIGN.md (decisions and results) and SEARCH.md (the public write-up). Settings shared by the page, ask.mjs and the eval live in rag-config.js. To evaluate a change to the model, prompt or K, run `node eval/serve.mjs`, open eval/generate.html with the settings as URL parameters in a browser with WebGPU, call runAll(), have the saved run judged against eval/rag-judge-rubric.md, and score it with `node eval/rag-score.mjs`. Record the decision in DESIGN.md.
+
 ## Other
 
 - Title in `<head>` says `~500 Curated Tweets` — leave alone (approximate).

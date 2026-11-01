@@ -14,10 +14,13 @@ const pool = new Map(read('pool.json').map(p => [p.query, p.candidates]));
 const llm = new Map(read('labels.json').map(l => [l.query, new Set(l.relevant)]));
 const adam = read('labels-adam.json').filter(l => pool.has(l.query));
 const text = new Map(loadTweets().map(t => [t.url, t.content]));
+// Only tweets still in the collection count.
+for (const [q, c] of pool) pool.set(q, c.filter(u => text.has(u)));
 
 let both = 0, onlyAdam = 0, onlyLlm = 0, neither = 0;
 const disagreements = [];
-for (const { query, relevant } of adam) {
+for (const { query, relevant: all } of adam) {
+    const relevant = all.filter(u => text.has(u));
     const a = new Set(relevant);
     const l = llm.get(query) ?? new Set();
     for (const u of pool.get(query)) {

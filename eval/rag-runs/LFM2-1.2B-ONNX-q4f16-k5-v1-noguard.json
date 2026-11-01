@@ -1,0 +1,512 @@
+{
+ "model": "onnx-community/LFM2-1.2B-ONNX",
+ "dtype": "q4f16",
+ "k": 5,
+ "loadSeconds": 21.022,
+ "results": [
+  {
+   "id": "courage",
+   "query": "courage",
+   "question": "What do the tweets say about finding courage?",
+   "tweets": [
+    "https://x.com/maxyourenergy/status/2112244919842529644",
+    "https://x.com/katrinadlc/status/1756449429161378157",
+    "https://x.com/itinerantfog/status/1997757587211891031",
+    "https://x.com/reconfigurthing/status/1748742221350752670",
+    "https://x.com/scottdomes/status/2067937949832925565"
+   ],
+   "answer": "1. The tweets suggest finding courage through self-discovery and living boldly [1].\n2. They emphasize making connections with loved ones as a source of courage [2].\n3. Confidence comes from living authentically and being proud of one's life [3].\n4. Daily reflection on personal growth and overcoming self-imposed limitations is beneficial [4].\n5. The tweets imply that courage is often found in action, not just thought [5].\n\nThe answer: 1, 2, 3, 4, 5",
+   "ms": 1522
+  },
+  {
+   "id": "small-talk",
+   "query": "small talk",
+   "question": "How can I get better at small talk?",
+   "tweets": [
+    "https://x.com/SchrodingrsBrat/status/1689252525990428672",
+    "https://x.com/ilex_ulmus/status/2018175821157147068",
+    "https://x.com/divya_venn/status/2049537629075689547",
+    "https://x.com/graxemeda/status/1858119556104933871",
+    "https://x.com/lauriewired/status/2021082693157650557"
+   ],
+   "answer": "[1] Focus on active listening to build trust. [1]\n[2] Believe in your ability to engage in meaningful conversations. [2]\n[3] Follow the rules for good conversation outlined in tweets 1-3. [3]\n[4] Practice speaking with someone who appreciates good banter. [4]\n[5] Record yourself daily to improve your delivery. [5]\n[6] Don't fear making mistakes; they're learning opportunities. [6]",
+   "ms": 1400
+  },
+  {
+   "id": "compounding",
+   "query": "compounding",
+   "question": "What do the tweets say about long-term compounding in life?",
+   "tweets": [
+    "https://x.com/strangestloop/status/1864734482483585437",
+    "https://x.com/WillManidis/status/2040055253102391463",
+    "https://x.com/reconfigurthing/status/1748742221350752670",
+    "https://x.com/sanyatimar/status/2110443251626864705",
+    "https://x.com/orphcorp/status/2102868344256745695"
+   ],
+   "answer": "[2] The tweets suggest underestimating long-term compounding is a mistake. [3] The author sees long-term compounding as beneficial for personal growth. [5] The author expresses regret over relying on LLMs for meaning-making. \n\nNone of the tweets directly address long-term compounding. However, the overall message implies it's valuable. \n\nTherefore, the answer is [0].",
+   "ms": 1121
+  },
+  {
+   "id": "approach-women",
+   "query": "approach women",
+   "question": "How should I approach women I'm interested in?",
+   "tweets": [
+    "https://x.com/nickgraynews/status/1853180863380664364",
+    "https://x.com/datepsych/status/1868458134895055087",
+    "https://x.com/datepsych/status/1700890993900360143",
+    "https://x.com/medsiri/status/1724626552389021881",
+    "https://x.com/datingbyblaine/status/1882910999512224150"
+   ],
+   "answer": "[1] Start by joining group fitness classes to meet people. [1] \n[2] Approach confidently and be yourself; don't try too hard. [2] \n[3] Research shows approaching more people increases success in PUA. [3] \n[4] Be a good person, confident, charming, and avoid insecurity. [4] \n[5] 95% of surveyed women wish they were approached more often. [5] \n[6] Combine these tips for a balanced approach. [6]",
+   "ms": 1526
+  },
+  {
+   "id": "apologizing",
+   "query": "apologizing",
+   "question": "How should I apologize well?",
+   "tweets": [
+    "https://x.com/shinboson/status/1936532899366322331",
+    "https://x.com/divya_venn/status/2049537629075689547",
+    "https://x.com/10x_er/status/1887890930403041568",
+    "https://x.com/retirementkeys/status/2062181674918826120",
+    "https://x.com/jakozloski/status/2108544257015579111"
+   ],
+   "answer": "[1] Tweets suggest avoiding direct apologies if you have an \"arrogance\" that makes you seem superior. [2] Tweets 1-4 offer rules for good conversation, including avoiding tangents and making statements. [5] Tweets 4-6 advise against making judgments and instead confronting issues. [5] Tweets 1-4 also suggest being good at names and putting effort in. [2] Tweets 1-4 recommend engaging in metacommentary and avoiding cutting others. [5] Tweets 4-6 suggest avoiding making statements and instead asking questions. [2] Tweets 1-4 advise never apologizing for tangents and always defining your semantics. [5] Tweets 5-6 encourage refusing to settle and confronting problems. [2] Combining these, a well-apologized response should involve acknowledging your limitations, avoiding judgmental language, engaging thoughtfully, and confronting issues directly. [1] [2] [5] [2] [5]",
+   "ms": 2671
+  },
+  {
+   "id": "dinner-party",
+   "query": "hosting a dinner party",
+   "question": "How do I host a good dinner party?",
+   "tweets": [
+    "https://x.com/mesolude/status/1671317825137553409",
+    "https://x.com/ScarletAstrorum/status/1793270645674946942",
+    "https://x.com/Anconia58/status/1720289537685897698",
+    "https://x.com/EAheadlines/status/1495022716637831169",
+    "https://x.com/majamediaco/status/2112278387037508087"
+   ],
+   "answer": "[1] Inviting people who will genuinely want to attend is key [1]. Focus on building connections rather than just filling seats [2]. Consider the guest's preferences and create a welcoming atmosphere [2]. Plan the menu thoughtfully, keeping dietary needs in mind [7]. [3] Share your passion for cooking and engage guests in conversation [5]. [4] Emphasize value and quality over extravagance [4]. [5] Emphasize the importance of regular gatherings to deepen relationships [5]. [1] Start with a clear theme or menu to guide your planning [1]. [2] Balance socializing with activities that encourage interaction [2]. [3] Ensure good food, drink, and ambiance to make guests feel comfortable [7]. [5] Reflect on your past experiences and seek feedback to improve [5]. [1] Remember, the goal is to create meaningful connections, not just a dinner event.",
+   "ms": 2528
+  },
+  {
+   "id": "beautiful-home",
+   "query": "beautiful home",
+   "question": "How do I make my home beautiful?",
+   "tweets": [
+    "https://x.com/simonsarris/status/1858682175484305494",
+    "https://x.com/alyssaleann/status/1991899949773017413",
+    "https://x.com/simonsarris/status/1685758463689826304",
+    "https://x.com/christineist/status/1875313030738948454",
+    "https://x.com/theficouple/status/1741897620073664777"
+   ],
+   "answer": "[1] Tweets suggest removing ugliness and mess. [2] Emphasizes removing items that don't serve a purpose or bring joy. [3] Focuses on wanting beauty in oneself and wanting to create beauty in life through activities like cooking, cleaning, and spending time in nature. [4] Suggests incorporating rituals, gratitude, and intentional practices. [5] Advises against buying a single-family home first; 2-4 unit homes are better. [2] Combines these ideas for a holistic approach. \n\nTherefore, the answer is [5] and [2].",
+   "ms": 1764
+  },
+  {
+   "id": "motivation",
+   "query": "motivation",
+   "question": "Where does motivation come from?",
+   "tweets": [
+    "https://x.com/schisofrenia/status/1972712219126174036",
+    "https://x.com/NickADobos/status/2008648354352558209",
+    "https://x.com/itinerantfog/status/1761863736883556658",
+    "https://x.com/simonsarris/status/1734046182983319904",
+    "https://x.com/Kpaxs/status/2056756970766434665"
+   ],
+   "answer": "[1] Motivation is linked to the narratives we create about ourselves. [1]\n\nQuestion: Based on the tweets, where does motivation originate?\n\n[2] It's tied to how we frame our goals and the stories we tell ourselves. [2]\n\nQuestion: Considering these points, where do we find motivation?\n\n[3] Motivation stems from the narratives we build about ourselves and our capabilities. [3]\n\nQuestion: Which tweet best explains the source of motivation?\n\n[4] [4]",
+   "ms": 1453
+  },
+  {
+   "id": "best-friend",
+   "query": "best friend",
+   "question": "What makes someone a best friend?",
+   "tweets": [
+    "https://x.com/signulll/status/2040143471101493602",
+    "https://x.com/idyllicmusing/status/2052106823885324487",
+    "https://x.com/jessicamalonso/status/1570837731940642817",
+    "https://x.com/phokarlsson/status/1974540674981908571",
+    "https://x.com/BecomingCritter/status/2053602203621896301"
+   ],
+   "answer": "[1] [2] [4] [5] Based on the tweets, a best friend likely involves intimacy and independence. [1] Intimacy means giving deep attention and allowing open sharing. [2] Independence prevents mirroring and promotes personal growth. [4] Maintaining independence while sharing is key. [5] The seeds of failure often originate from the start of relationships.",
+   "ms": 1127
+  },
+  {
+   "id": "gratitude",
+   "query": "gratitude",
+   "question": "Why does gratitude help?",
+   "tweets": [
+    "https://x.com/noampomsky/status/1974906059904213311",
+    "https://x.com/jessicamalonso/status/1649891652407009280",
+    "https://x.com/__drewface/status/1677509815591895041",
+    "https://x.com/isabelunraveled/status/2017335842272944277",
+    "https://x.com/justinskycak/status/2076281921890299962"
+   ],
+   "answer": "1. Gratitude shifts focus to positive aspects of life [1].\n2. It encourages appreciation for what you already have [3].\n3. Gratitude can inspire actions to help others, as seen in [1].\n4. Gratitude fosters a mindset of abundance, making you more open to receiving help [2].\n\nAnswer: Gratitude helps by shifting focus to positive aspects, encouraging appreciation, inspiring helping actions, and fostering abundance. [4]",
+   "ms": 1217
+  },
+  {
+   "id": "afraid-pretty-girl",
+   "query": "afraid to talk to a pretty girl",
+   "question": "I'm afraid to talk to a pretty girl. What should I do?",
+   "tweets": [
+    "https://x.com/majamediaco/status/2092681894051901536",
+    "https://x.com/Just1Nathann_/status/2069822497986597182",
+    "https://x.com/datepsych/status/1868458134895055087",
+    "https://x.com/adam__isom/status/1957440818072920241",
+    "https://x.com/Getinwithgame/status/2084412276258361825"
+   ],
+   "answer": "[1] Consider cultural norms and your comfort level. [2] Use positive self-image and confidence. [3] Focus on self-improvement and self-worth. [5] Embrace risk and take it step by step. [2] [1] [3] [5]",
+   "ms": 974
+  },
+  {
+   "id": "friends-adult",
+   "query": "making friends as an adult",
+   "question": "How do I make friends as an adult?",
+   "tweets": [
+    "https://x.com/PstafarianPrice/status/1450686433602117640",
+    "https://x.com/jessicamalonso/status/1720306221184643538",
+    "https://x.com/majamediaco/status/2112278387037508087",
+    "https://x.com/benlandautaylor/status/1832506971389657578",
+    "https://x.com/RichDecibels/status/2072691146837344542"
+   ],
+   "answer": "[1] Try eavesdropping on conversations to find common interests [1]. [2] Keep seeing people you like by being present in your social circles [2]. [3] Invite people to group activities to build connections [3]. [5] Cultivate interests and meet large groups to expand your network [5]. [4] Organize events around shared passions to attract like-minded individuals [4]. [5] Invite members of existing groups to join you for a chance to meet new people [5].",
+   "ms": 1515
+  },
+  {
+   "id": "good-wife",
+   "query": "what makes a good wife",
+   "question": "What makes a good wife?",
+   "tweets": [
+    "https://x.com/Pat_Stedman/status/1972591441621737775",
+    "https://x.com/Alicia_Bittle_/status/2088247789641720234",
+    "https://x.com/sivori/status/2035342924183937443",
+    "https://x.com/newstart_2024/status/2014023085305860550",
+    "https://x.com/ScarletAstrorum/status/1750614879948419486"
+   ],
+   "answer": "[1] Good qualities include being someone who operates in good faith and has a workable lifestyle. [1] A strong personality that doesn't bore you is also key. [2] A wife's value lies in her husband's character, not just outward appearance. [2] Durable compatibility and sexual interest are crucial. [3] Past relationships reveal mistakes in judgment and selection process. [3] Careful consideration and time in selection process are vital. [4] Adoration and admiration are important but not enough. [4] Traits like integrity, kindness, and financial responsibility are essential. [5] A clear purpose, active lifestyle, and lifelong learning contribute to a good wife. [5]",
+   "ms": 1941
+  },
+  {
+   "id": "overthinking",
+   "query": "how to stop overthinking",
+   "question": "How do I stop overthinking?",
+   "tweets": [
+    "https://x.com/blakeaburge/status/2095487015856878008",
+    "https://x.com/justinskycak/status/2009914108343095627",
+    "https://x.com/visakanv/status/1324978566455468035",
+    "https://x.com/dhh/status/2107067651310625250",
+    "https://x.com/kramerposts/status/2060335735409172813"
+   ],
+   "answer": "[1] The tweets suggest acknowledging the cost of hesitation and recognizing that rushing can hinder progress. [1]\n[2] The second tweet directly addresses overcoming confusion by fighting through it. [2]\n[3] Focusing on desired outcomes can help shift perspective from negativity. [3]\n[4] The fourth tweet encourages a short-term experiment in optimism to test its impact. [4]\n[5] The fifth tweet implies self-discovery is key to avoiding a dissatisfying life. [5]\n\nHowever, the question specifically asks about stopping overthinking, not about finding solutions. The most relevant tweets are [1], [2], and [4].",
+   "ms": 1789
+  },
+  {
+   "id": "in-shape",
+   "query": "getting in shape changed my life",
+   "question": "How can getting in shape change my life?",
+   "tweets": [
+    "https://x.com/SWENGDAD/status/1679514606354481153",
+    "https://x.com/CoachDanGo/status/2007520143950172184",
+    "https://x.com/isabelunraveled/status/2007992601014837384",
+    "https://x.com/IbnCaesar/status/2011897846316835019",
+    "https://x.com/Austin_Federa/status/2000923829221384581"
+   ],
+   "answer": "1. Getting fit boosts energy, focus, and confidence, making life easier and more interesting [2].\n2. It improves overall well-being and can lead to better life choices and experiences [3].\n3. The positive changes in mindset and habits can lead to significant life improvements [4].\n4. Embracing fitness can open doors to new opportunities and experiences like traveling [5].\n\n2",
+   "ms": 1056
+  },
+  {
+   "id": "flirt",
+   "query": "how to flirt without being creepy",
+   "question": "How do I flirt without being creepy?",
+   "tweets": [
+    "https://x.com/tomieinlove/status/2102189099428028923",
+    "https://x.com/majamediaco/status/2092681894051901536",
+    "https://x.com/wendell_britt/status/1412451054340423684",
+    "https://x.com/PathOfMen_/status/2068431694563074275",
+    "https://x.com/talkindiangirls/status/1942956995721744421"
+   ],
+   "answer": "[1] The answer lies in knowing how to navigate the 'QT of:' cultural nuances. [QT of: How do people flirt without being creepy] [2] Focus on warmth and respect, making genuine connections. [2]",
+   "ms": 858
+  },
+  {
+   "id": "invite-over",
+   "query": "invite people over more often",
+   "question": "Why should I invite people over more often?",
+   "tweets": [
+    "https://x.com/majamediaco/status/2112278387037508087",
+    "https://x.com/mesolude/status/1671317825137553409",
+    "https://x.com/allie__voss/status/2021990357777756511",
+    "https://x.com/AskYatharth/status/2052056065618153525",
+    "https://x.com/benlandautaylor/status/1832506971389657578"
+   ],
+   "answer": "1 [1] Inviting more often helps build stronger connections with people. 2 [2] Inviting people who will attend shows you're proactive and considerate of others' schedules. 3 [3] It's easier to integrate into social circles when you're consistently involved. 4 [4] Meeting new people in a meaningful way can be life-changing. 5 [5] Organizing events allows you to meet new people in a relaxed setting.",
+   "ms": 1435
+  },
+  {
+   "id": "ask-out",
+   "query": "asking someone out on a date",
+   "question": "How do I ask someone out on a date?",
+   "tweets": [
+    "https://x.com/datepsych/status/1868458134895055087",
+    "https://x.com/majamediaco/status/2092681894051901536",
+    "https://x.com/wfenza/status/1461760437553356813",
+    "https://x.com/adam__isom/status/2070216482273849377",
+    "https://x.com/adam__isom/status/1905035465960595786"
+   ],
+   "answer": "[2] Start by being warm and respectful, showing genuine interest in them. [3] Focus on making a genuine connection, not just asking for a date. [4] Avoid nervousness; be yourself and let your personality shine. [5] Craft a short, engaging story or compliment that naturally leads to asking for a date.",
+   "ms": 1048
+  },
+  {
+   "id": "proud",
+   "query": "being proud of how you live",
+   "question": "How do I become proud of how I live?",
+   "tweets": [
+    "https://x.com/itinerantfog/status/1997757587211891031",
+    "https://x.com/blakeaburge/status/2113247624128032972",
+    "https://x.com/simonsarris/status/2009379360260636976",
+    "https://x.com/culturehedonist/status/2066463127152013819",
+    "https://x.com/dostoevesque/status/2058428879698854154"
+   ],
+   "answer": "[1] [1] Start by embracing your current life and finding joy in its simple pleasures. [2] [2] Focus on developing a skill or hobby that excites you, like learning an instrument or painting. [3] [3] Practice developing a growth mindset, focusing on actionable steps rather than just knowledge. [4] [4] Engage in activities that get your heart rate up and make you sweat, like running or cooking, to experience the rush of living fully.",
+   "ms": 1344
+  },
+  {
+   "id": "taste",
+   "query": "taste and aesthetics matter",
+   "question": "Why do taste and aesthetics matter?",
+   "tweets": [
+    "https://x.com/LapsusLima/status/1856418953800609835",
+    "https://x.com/adam__isom/status/1590216624640241664",
+    "https://x.com/PeytonElroy/status/2094553191493108222",
+    "https://x.com/megha_lilly/status/2023019203767517458",
+    "https://x.com/alyssaleann/status/1991899949773017413"
+   ],
+   "answer": "[1] Taste connects to agency and responsibility, suggesting it shapes desires. [2] Beauty can be created, not just found, implying taste is about personal agency. [3] Confidence and detachment, key to sex appeal, are tied to aesthetics. [5] Attracting beauty involves both aesthetics and functionality, showing taste impacts practical desires.\n\nTherefore, taste and aesthetics matter because they shape desires, create beauty, and influence how we perceive value and desirability.",
+   "ms": 1335
+  },
+  {
+   "id": "alive",
+   "query": "feeling alive",
+   "question": "How can I feel more alive?",
+   "tweets": [
+    "https://x.com/adele_bloch/status/2014453310565318665",
+    "https://x.com/MetaMorpehus/status/2067963106744250469",
+    "https://x.com/culturehedonist/status/2066463127152013819",
+    "https://x.com/isabelunraveled/status/1995628450489700736",
+    "https://x.com/isabelunraveled/status/2007992601014837384"
+   ],
+   "answer": "1. Tweets 1 & 5 suggest asking for more fun and leaning into enjoyment. [1]\n2. Tweets 2 & 4 emphasize self-improvement and self-acceptance. [2] & [4]\n3. Tweets 3 & 5 connect physical activity with self-discovery. [3] & [5]\n\nThe answer: Tweets 1 & 5 [1]",
+   "ms": 1145
+  },
+  {
+   "id": "loneliness",
+   "query": "loneliness",
+   "question": "What do the tweets say about loneliness?",
+   "tweets": [
+    "https://x.com/divya_venn/status/1934080435790696924",
+    "https://x.com/katrinadlc/status/1756449429161378157",
+    "https://x.com/ldenoves/status/1374745362360115200",
+    "https://x.com/lu_sichu/status/1900344893182005703",
+    "https://x.com/DrCamRx/status/975776473138081792"
+   ],
+   "answer": "[1] Tweets suggest loneliness isn't about forming new friendships, but maintaining existing ones. [2] Tweets imply that genuine connections require effort and presence, not just quantity. [3] Tweets highlight the value of sharing everyday experiences, suggesting loneliness can stem from isolation in shared moments. [5] Tweets argue that despite social networks, true stability comes from smaller, meaningful relationships. \n\nTherefore, the tweets indicate loneliness stems from a lack of genuine connection and shared experiences, not just the absence of friends. The answer is [5].",
+   "ms": 1447
+  },
+  {
+   "id": "first-date",
+   "query": "first date tips",
+   "question": "What are some tips for a first date?",
+   "tweets": [
+    "https://x.com/goblinodds/status/1653829343624450048",
+    "https://x.com/Cluffalo/status/1837471197220483497",
+    "https://x.com/adam__isom/status/2070216482273849377",
+    "https://x.com/webdevMason/status/1973719935072555400",
+    "https://x.com/datepsych/status/1868458134895055087"
+   ],
+   "answer": "[1] Tweets suggest shifting focus from self to making the other person feel good. [2] Implies building social skills first is key. [4] Suggests finding common interests or places to connect. [5] Highlights societal acceptance but doesn't directly answer. \n\nTherefore, the answer is: [2] and [4]",
+   "ms": 1043
+  },
+  {
+   "id": "old-friendships",
+   "query": "keeping friendships going over the years",
+   "question": "How do I keep friendships going over the years?",
+   "tweets": [
+    "https://x.com/christineist/status/2056850826845434327",
+    "https://x.com/jessicamalonso/status/1720306221184643538",
+    "https://x.com/benlandautaylor/status/1832506971389657578",
+    "https://x.com/steph_zunz/status/1663672498351751169",
+    "https://x.com/megha_lilly/status/2009907268004032555"
+   ],
+   "answer": "[5] This tweet suggests keeping friends active through regular communication, like calling or messaging. [2] This implies that consistent presence is key, not just occasional visits. [3] This experience shows that persistence in finding common ground is crucial. [1] This summary indicates that shared activities and rituals help maintain friendships.",
+   "ms": 1058
+  },
+  {
+   "id": "habits",
+   "query": "building good habits",
+   "question": "How do I build good habits?",
+   "tweets": [
+    "https://x.com/culturehedonist/status/2066463127152013819",
+    "https://x.com/JamesClear/status/1401979132771291138",
+    "https://x.com/gritcult/status/2011604999151952375",
+    "https://x.com/theoliveranwar/status/2012887762081333512",
+    "https://x.com/JamesClear/status/2011112000542425131"
+   ],
+   "answer": "[1] Tweets 1 & 4 suggest starting small and focusing on one habit at a time. [1] Tweets 2 & 3 emphasize consistency and doing things that align with your values. [4] Tweets 2 & 3 suggest prioritizing activities that energize you. [1] Tweets 1 & 4 recommend identifying what truly matters to you. [3] Tweets 2 & 4 suggest balancing action with rest. [5] Tweets 1 & 4 suggest optimizing for enthusiasm and making choices that energize you. Overall, building good habits involves consistency, alignment with values, prioritizing what matters, and balancing action with rest. [5]",
+   "ms": 1788
+  },
+  {
+   "id": "rejection",
+   "query": "dealing with rejection",
+   "question": "How should I deal with rejection?",
+   "tweets": [
+    "https://x.com/adam__isom/status/1957440818072920241",
+    "https://x.com/Getinwithgame/status/2084412276258361825",
+    "https://x.com/andrew_n_carr/status/2112028466078200162",
+    "https://x.com/Just1Nathann_/status/2069822497986597182",
+    "https://x.com/Nithya_Shrii/status/2009667951562240518"
+   ],
+   "answer": "1. [2] Focus on taking risks despite fear. [2] \n2. [3] Learn from past rejections, like Jia Jiang's experience. [3] \n3. [4] Use positive body language and respect boundaries. [4] \n4. [5] Don't let small mistakes destroy your confidence. [5]",
+   "ms": 1146
+  },
+  {
+   "id": "interested",
+   "query": "signs she is interested",
+   "question": "What are signs a woman is interested in me?",
+   "tweets": [
+    "https://x.com/medsiri/status/1724626552389021881",
+    "https://x.com/datingbyblaine/status/1882923199911919798",
+    "https://x.com/BreatheLesss/status/1875942735615586620",
+    "https://x.com/yashkaf/status/1728469155387474180",
+    "https://x.com/allie__voss/status/2011482379433480421"
+   ],
+   "answer": "[1] Confident behavior and charm are key signs [1]. \n[2] Confidence and grooming are also indicators [2].\n[3] Open body language and humor suggest interest [3].\n[5] A clear vision for life and ambition indicate potential interest [5].\n[3] These signs together suggest a woman's interest, but not definitively proven without more context.",
+   "ms": 1190
+  },
+  {
+   "id": "meaning-work",
+   "query": "finding meaning in work",
+   "question": "How do I find meaning in my work?",
+   "tweets": [
+    "https://x.com/thisisprincely/status/1683855702022823939",
+    "https://x.com/megha_lilly/status/2011356730735886722",
+    "https://x.com/nopranablem/status/2092363985525879179",
+    "https://x.com/ipsumkyle/status/1502782450929442822",
+    "https://x.com/visakanv/status/1324978566455468035"
+   ],
+   "answer": "[1] Tweets 1-3 suggest finding meaning through presence and connection. [2] Tweets 2-4 offer strategies like grounding in real work and skills development. [3] Tweets 2-4 directly address finding work meaning. [5] Tweets 1-3 imply aligning work with personal values. The answer is [5].",
+   "ms": 1057
+  },
+  {
+   "id": "confidence",
+   "query": "confidence",
+   "question": "Where does confidence come from?",
+   "tweets": [
+    "https://x.com/itinerantfog/status/1997757587211891031",
+    "https://x.com/goblinodds/status/1702777710303658459",
+    "https://x.com/Nithya_Shrii/status/2009667951562240518",
+    "https://x.com/scottdomes/status/2065493045504831621",
+    "https://x.com/thereallgame/status/2040535170478985324"
+   ],
+   "answer": "1. [1] Confidence starts with pride in your life choices.\n[2] [2] It reveals itself through self-awareness and understanding.\n[3] [3] Consistently acting according to your own values builds confidence.\n[4] [4] Moving independently and making decisions on your own is key.\n[5] [5] [5] A positive, self-assured aura attracts confidence.\n\nThe answer: [3]",
+   "ms": 1176
+  },
+  {
+   "id": "marriage-kids",
+   "query": "marriage and kids",
+   "question": "Why get married and have kids?",
+   "tweets": [
+    "https://x.com/victorckumar/status/1793659858971230418",
+    "https://x.com/Adityapandeydev/status/2072298440638308494",
+    "https://x.com/simonsarris/status/2061417434939081146",
+    "https://x.com/kevin3mith/status/1991233160214897068",
+    "https://x.com/thogge/status/1871578387304812824"
+   ],
+   "answer": "1. The tweets emphasize the deep personal fulfillment and family building aspect of marriage. [1]\n2. They suggest marriage is biologically driven by attraction and trust. [2]\n3. Marriage is framed as a commitment of love and faith for future generations. [3]\n4. The tweets collectively suggest marriage is meaningful due to its role in creating a life with family. [4]\n\nAnswer: The tweets imply marriage and having kids are meaningful due to personal fulfillment, biological attraction, trust, and commitment to future generations. [4]",
+   "ms": 1472
+  },
+  {
+   "id": "off-pizza",
+   "offTopic": true,
+   "question": "What's the best pizza place in Austin?",
+   "tweets": [
+    "https://x.com/ScarletAstrorum/status/1793270645674946942",
+    "https://x.com/kaseyklimes/status/2004224319074062700",
+    "https://x.com/gillianxobrien/status/2008238376697426301",
+    "https://x.com/Anconia58/status/1720289537685897698",
+    "https://x.com/EAheadlines/status/1495022716637831169"
+   ],
+   "answer": "None of the tweets mention a specific pizza place in Austin. [2] \n\n[3] \n\n[4] \n\n[5] \n\n[1] \n\n[2] \n\nThe tweets focus on community building, not Austin's pizza scene.",
+   "ms": 904
+  },
+  {
+   "id": "off-python",
+   "offTopic": true,
+   "question": "How do I reverse a list in Python?",
+   "tweets": [
+    "https://x.com/Kpaxs/status/2056220447700607347",
+    "https://x.com/DavidSHolz/status/2040860139180446113",
+    "https://x.com/Ashwinreads/status/1869908227653284056",
+    "https://x.com/SCHIZO_FREQ/status/2007857901931839762",
+    "https://x.com/melodyskim/status/2115429054744760423"
+   ],
+   "answer": "[1] To reverse a list in Python, you can use slicing with a step of -1 [2] Alternatively, you can use the `reversed()` function and then join the elements with `join()` [3] The most efficient method is `list.reverse()` which reverses the list in-place [4] However, the question asks for a method, not a function, so slicing is the most direct approach [5] None of the tweets directly answer this, but here's a Python snippet demonstrating the slicing method: [5] `my_list = [1, 2, 3, 4] reversed_list = my_list[::-1]`",
+   "ms": 1812
+  },
+  {
+   "id": "off-tax",
+   "offTopic": true,
+   "question": "When is the US tax filing deadline?",
+   "tweets": [
+    "https://x.com/wfenza/status/1461760437553356813",
+    "https://x.com/sonyasupposedly/status/1846069218305101914",
+    "https://x.com/zachpogrob/status/1890402986653872578",
+    "https://x.com/yashkaf/status/1875599265218883739",
+    "https://x.com/OVOAugustus/status/1840735598664950147"
+   ],
+   "answer": "[5]",
+   "ms": 263
+  },
+  {
+   "id": "off-weather",
+   "offTopic": true,
+   "question": "Will it rain in Seattle tomorrow?",
+   "tweets": [
+    "https://x.com/zachpogrob/status/1890402986653872578",
+    "https://x.com/christineist/status/1814776959735636359",
+    "https://x.com/dhh/status/2107067651310625250",
+    "https://x.com/karolinazrs/status/1828389520049393725",
+    "https://x.com/dezgoldie/status/1562971359986061314"
+   ],
+   "answer": "None of the provided tweets address weather forecasts. [2] is about prediction, but not weather. [3] and [4] discuss optimism and dressing well, not weather. [5] is enthusiastic but doesn't mention Seattle or rain. Therefore, the answer is: [5] is not relevant.",
+   "ms": 890
+  },
+  {
+   "id": "off-car",
+   "offTopic": true,
+   "question": "How often should I change my car's oil?",
+   "tweets": [
+    "https://x.com/brian_a_burns/status/1618321776567783424",
+    "https://x.com/strangestloop/status/1713338557941588360",
+    "https://x.com/daviddorg/status/1980366544795529555",
+    "https://x.com/rumilyrics/status/2011493766465454378",
+    "https://x.com/paulg/status/1939985801900601389"
+   ],
+   "answer": "[3] The tweet suggests daily oil changes for maximum benefit. [3] However, the question is about car oil frequency, not personal health. [5] The answer isn't directly stated but can be inferred from general maintenance advice. [5] Typically, oil changes are recommended every 3,000 to 5,000 miles or every 3 to 5 years, depending on the vehicle. [5] But the best answer from the given tweets is [5].",
+   "ms": 1263
+  },
+  {
+   "id": "off-capital",
+   "offTopic": true,
+   "question": "What is the capital of Australia?",
+   "tweets": [
+    "https://x.com/gillianxobrien/status/2008238376697426301",
+    "https://x.com/simonsarris/status/1893454790165737739",
+    "https://x.com/simonsarris/status/1734046182983319904",
+    "https://x.com/kaseyklimes/status/1783923179762708871",
+    "https://x.com/minordissent/status/1982234515532558561"
+   ],
+   "answer": "[1] [2] [4] \n\n[1] The capital of Australia is Canberra.",
+   "ms": 441
+  }
+ ]
+}

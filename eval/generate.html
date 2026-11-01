@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RAG eval runner</title>
+<style>
+    :root { --bg: #fafaf8; --fg: #2a2a2a; --muted: #999; }
+    @media (prefers-color-scheme: dark) { :root { --bg: #1a1a1a; --fg: #e0e0e0; --muted: #888; } }
+    body { background: var(--bg); color: var(--fg); font: 15px/1.5 Georgia, serif; max-width: 760px; margin: 0 auto; padding: 16px; }
+    #status { color: var(--muted); }
+    pre { white-space: pre-wrap; font-size: 0.85em; }
+</style>
+</head>
+<body>
+<h1>RAG eval runner</h1>
+<p>Runs eval/questions.json through a small model on WebGPU, with the site's own retrieval and prompt.
+Usage: <code>generate.html?model=onnx-community/...&amp;dtype=q4&amp;k=5</code>, then call <code>runAll()</code>
+in the console; results land in <code>window.results</code> and can be downloaded with <code>download()</code>.</p>
+<p id="status">loading...</p>
+<pre id="log"></pre>
+<script type="module">
+    import { MODEL, DTYPE, DIM } from '../search-config.js';
+    import { cosineScores, rank } from '../search.js';
+    import { GEN_MODEL, GEN_DTYPE, K, MAX_NEW_TOKENS, PROMPT_VERSION, SKIP_BELOW, NO_ANSWER, buildMessages, cleanOutput } from '../rag-config.js';
+
+    const T = await import('https://cdn.jsdelivr.net/npm/@huggingface/transformers@4.3.0');
+    const params = new URLSearchParams(location.search);
+    const model = params.get('model') || GEN_MODEL;
+    const dtype = params.get('dtype') || GEN_DTYPE;
+    const k = parseInt(params.get('k') || K, 10);
+    const prompt = params.get('prompt') || PROMPT_VERSION;
+    const guard = params.get('guard') !== 'off';   // skip the model when the best tweet scores below SKIP_BELOW
+    const status = document.getElementById('status');
+    const log = document.getElementById('log');
+
+    // Tweets from index.html, and vectors in the same order as vectors-meta.json.
+    const html = await fetch('../index.html').then(r => r.text());
+    const tweets = new Function('return ' + html.match(/tweetsData = \[[\s\S]*?\n\];/)[0].replace('tweetsData =', '').replace(/;$/, ''))();
+    const byUrl = new Map(tweets.map(t => [t.url, t]));
+    const meta = await fetch('../vectors-meta.json').then(r => r.json());
+    const matrix = new Float32Array(await fetch('../vectors.bin').then(r => r.arrayBuffer()));
+    const questions = await fetch('questions.json').then(r => r.json());
+    const embed = await T.pipeline('feature-extraction', MODEL, { dtype: DTYPE });
+
+    status.textContent = `loading ${model} (${dtype})...`;
+    const t0 = performance.now();
+    const generate = await T.pipeline('text-generation', model, { dtype, device: 'webgpu' });
+    const loadSeconds = (performance.now() - t0) / 1000;
+    status.textContent = `ready: ${model} (${dtype}), k=${k}, prompt ${prompt}, guard ${guard ? 'on' : 'off'}, loaded in ${loadSeconds.toFixed(0)} s`;
+
+    async function retrieve(question) {
+        const q = await embed(question, { pooling: 'mean', normalize: true });
+        const scores = cosineScores(q.data, matrix, DIM);
+        const top = rank(scores).slice(0, k);
+        return { context: top.map(i => byUrl.get(meta.urls[i])), topScore: scores[top[0]] };
+    }
+
+    async function answer(question, context) {
+        const out = await generate(buildMessages(question, context, model, prompt), { max_new_tokens: MAX_NEW_TOKENS, do_sample: false });
+        return cleanOutput(out[0].generated_text.at(-1).content);
+    }
+
+    const runName = `${model.split('/').pop()}-${dtype}-k${k}-${prompt}${guard ? '' : '-noguard'}.json`;
+    window.results = null;
+    window.runAll = async () => {
+        const results = [];
+        for (const q of questions) {
+            const { context, topScore } = await retrieve(q.question);
+            const start = performance.now();
+            const skipped = guard && topScore < SKIP_BELOW;
+            const text = skipped ? NO_ANSWER : await answer(q.question, context);
+            results.push({ ...q, tweets: context.map(t => t.url), topScore, skipped, answer: text, ms: Math.round(performance.now() - start) });
+            status.textContent = `${results.length}/${questions.length}`;
+            log.textContent = `${q.question}\n${text}\n\n` + log.textContent;
+        }
+        window.results = { model, dtype, k, prompt, guard, loadSeconds, results };
+        status.textContent = `done: ${results.length} answers`;
+        // eval/serve.mjs saves this into eval/rag-runs/; with another server the POST just fails.
+        await fetch(`/save?name=${encodeURIComponent(runName)}`, { method: 'POST', body: JSON.stringify(window.results, null, 1) })
+            .then(r => status.textContent += r.ok ? `, saved as eval/rag-runs/${runName}` : '', () => {});
+        return results.length;
+    };
+    window.probe = async (question = 'How do I make friends as an adult?') => answer(question, (await retrieve(question)).context);
+    window.download = () => {
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(new Blob([JSON.stringify(window.results, null, 1)], { type: 'application/json' }));
+        a.download = runName;
+        a.click();
+    };
+    window.ready = true;
+</script>
+</body>
+</html>

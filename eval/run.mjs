@@ -11,10 +11,12 @@ const K = 10;
 const dir = path.dirname(fileURLToPath(import.meta.url));
 const arg = process.argv.indexOf('--labels');
 const labelFile = arg > -1 ? process.argv[arg + 1] : 'labels.json';
-const labels = JSON.parse(fs.readFileSync(path.join(dir, labelFile), 'utf8'))
-    .filter(l => l.relevant.length > 0);
 const { tweets, rankers } = await makeRankers();
 const text = new Map(tweets.map(t => [t.url, t.content]));
+// Labels for tweets since cut from the collection are dropped; nothing could find them.
+const labels = JSON.parse(fs.readFileSync(path.join(dir, labelFile), 'utf8'))
+    .map(l => ({ ...l, relevant: l.relevant.filter(u => text.has(u)) }))
+    .filter(l => l.relevant.length > 0);
 
 const names = Object.keys(rankers);
 const sums = Object.fromEntries(names.map(n => [n, 0]));

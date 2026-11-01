@@ -1,0 +1,395 @@
+{
+ "courage": {
+  "verdicts": [
+   "partly",
+   "partly",
+   "partly",
+   "partly",
+   "partly"
+  ],
+  "responsive": "yes",
+  "declined": "no"
+ },
+ "small-talk": {
+  "verdicts": [
+   "supported",
+   "unsupported",
+   "supported",
+   "unsupported",
+   "supported",
+   "unsupported",
+   "partly"
+  ],
+  "responsive": "yes",
+  "declined": "no"
+ },
+ "compounding": {
+  "verdicts": [
+   "unsupported",
+   "supported",
+   "partly",
+   "supported"
+  ],
+  "responsive": "yes",
+  "declined": "no"
+ },
+ "approach-women": {
+  "verdicts": [
+   "partly",
+   "unsupported",
+   "partly",
+   "supported",
+   "partly",
+   "unsupported",
+   "unsupported",
+   "unsupported",
+   "unsupported",
+   "unsupported"
+  ],
+  "responsive": "yes",
+  "declined": "no"
+ },
+ "apologizing": {
+  "verdicts": [
+   "partly",
+   "supported",
+   "partly",
+   "partly",
+   "unsupported",
+   "unsupported"
+  ],
+  "responsive": "no",
+  "declined": "no"
+ },
+ "dinner-party": {
+  "verdicts": [
+   "unsupported",
+   "unsupported",
+   "unsupported",
+   "unsupported",
+   "unsupported",
+   "unsupported"
+  ],
+  "responsive": "yes",
+  "declined": "no"
+ },
+ "beautiful-home": {
+  "verdicts": [
+   "supported",
+   "partly",
+   "unsupported",
+   "partly",
+   "unsupported",
+   "unsupported",
+   "no-claim"
+  ],
+  "responsive": "yes",
+  "declined": "no"
+ },
+ "motivation": {
+  "verdicts": [
+   "supported",
+   "partly",
+   "supported",
+   "supported",
+   "supported"
+  ],
+  "responsive": "yes",
+  "declined": "no"
+ },
+ "best-friend": {
+  "verdicts": [
+   "unsupported",
+   "unsupported",
+   "supported",
+   "unsupported"
+  ],
+  "responsive": "yes",
+  "declined": "no"
+ },
+ "gratitude": {
+  "verdicts": [
+   "unsupported",
+   "unsupported",
+   "unsupported",
+   "unsupported",
+   "unsupported",
+   "unsupported",
+   "unsupported",
+   "unsupported"
+  ],
+  "responsive": "yes",
+  "declined": "no"
+ },
+ "afraid-pretty-girl": {
+  "verdicts": [
+   "unsupported",
+   "unsupported",
+   "unsupported",
+   "unsupported",
+   "supported"
+  ],
+  "responsive": "yes",
+  "declined": "no"
+ },
+ "friends-adult": {
+  "verdicts": [
+   "supported",
+   "unsupported",
+   "unsupported",
+   "supported"
+  ],
+  "responsive": "yes",
+  "declined": "no"
+ },
+ "good-wife": {
+  "verdicts": [
+   "unsupported",
+   "unsupported",
+   "partly",
+   "unsupported",
+   "unsupported",
+   "unsupported"
+  ],
+  "responsive": "yes",
+  "declined": "no"
+ },
+ "overthinking": {
+  "verdicts": [
+   "unsupported",
+   "unsupported",
+   "partly",
+   "partly",
+   "unsupported"
+  ],
+  "responsive": "yes",
+  "declined": "no"
+ },
+ "in-shape": {
+  "verdicts": [
+   "supported",
+   "supported",
+   "supported",
+   "supported",
+   "supported"
+  ],
+  "responsive": "yes",
+  "declined": "no"
+ },
+ "flirt": {
+  "verdicts": [
+   "unsupported",
+   "unsupported",
+   "unsupported",
+   "unsupported"
+  ],
+  "responsive": "yes",
+  "declined": "no"
+ },
+ "invite-over": {
+  "verdicts": [
+   "supported",
+   "supported",
+   "partly",
+   "unsupported",
+   "unsupported",
+   "unsupported"
+  ],
+  "responsive": "yes",
+  "declined": "no"
+ },
+ "ask-out": {
+  "verdicts": [
+   "unsupported",
+   "unsupported",
+   "unsupported",
+   "unsupported",
+   "unsupported",
+   "partly",
+   "unsupported"
+  ],
+  "responsive": "yes",
+  "declined": "no"
+ },
+ "proud": {
+  "verdicts": [
+   "unsupported",
+   "partly",
+   "unsupported",
+   "unsupported",
+   "supported"
+  ],
+  "responsive": "yes",
+  "declined": "no"
+ },
+ "taste": {
+  "verdicts": [
+   "supported",
+   "unsupported",
+   "partly",
+   "partly",
+   "partly"
+  ],
+  "responsive": "yes",
+  "declined": "no"
+ },
+ "alive": {
+  "verdicts": [
+   "supported",
+   "supported",
+   "supported",
+   "supported",
+   "partly"
+  ],
+  "responsive": "yes",
+  "declined": "no"
+ },
+ "loneliness": {
+  "verdicts": [
+   "unsupported",
+   "unsupported",
+   "unsupported",
+   "partly",
+   "unsupported"
+  ],
+  "responsive": "yes",
+  "declined": "no"
+ },
+ "first-date": {
+  "verdicts": [
+   "supported",
+   "partly",
+   "unsupported",
+   "unsupported",
+   "unsupported",
+   "unsupported",
+   "unsupported"
+  ],
+  "responsive": "yes",
+  "declined": "no"
+ },
+ "old-friendships": {
+  "verdicts": [
+   "supported",
+   "partly",
+   "partly",
+   "partly"
+  ],
+  "responsive": "yes",
+  "declined": "no"
+ },
+ "habits": {
+  "verdicts": [
+   "unsupported",
+   "unsupported",
+   "unsupported",
+   "unsupported",
+   "partly"
+  ],
+  "responsive": "yes",
+  "declined": "no"
+ },
+ "rejection": {
+  "verdicts": [
+   "unsupported"
+  ],
+  "responsive": "yes",
+  "declined": "no"
+ },
+ "interested": {
+  "verdicts": [
+   "partly",
+   "supported",
+   "unsupported"
+  ],
+  "responsive": "no",
+  "declined": "no"
+ },
+ "meaning-work": {
+  "verdicts": [
+   "partly",
+   "unsupported",
+   "partly",
+   "unsupported",
+   "partly"
+  ],
+  "responsive": "yes",
+  "declined": "no"
+ },
+ "confidence": {
+  "verdicts": [
+   "supported",
+   "supported",
+   "supported",
+   "supported",
+   "supported"
+  ],
+  "responsive": "yes",
+  "declined": "no"
+ },
+ "marriage-kids": {
+  "verdicts": [
+   "supported",
+   "supported",
+   "unsupported",
+   "unsupported",
+   "supported"
+  ],
+  "responsive": "yes",
+  "declined": "no"
+ },
+ "off-pizza": {
+  "verdicts": [
+   "unsupported",
+   "unsupported",
+   "unsupported"
+  ],
+  "responsive": "yes",
+  "declined": "no"
+ },
+ "off-python": {
+  "verdicts": [
+   "unsupported",
+   "unsupported",
+   "unsupported",
+   "unsupported",
+   "unsupported"
+  ],
+  "responsive": "yes",
+  "declined": "no"
+ },
+ "off-tax": {
+  "verdicts": [
+   "unsupported"
+  ],
+  "responsive": "yes",
+  "declined": "no"
+ },
+ "off-weather": {
+  "verdicts": [
+   "unsupported",
+   "unsupported",
+   "unsupported",
+   "unsupported",
+   "unsupported"
+  ],
+  "responsive": "yes",
+  "declined": "no"
+ },
+ "off-car": {
+  "verdicts": [
+   "unsupported",
+   "unsupported",
+   "unsupported"
+  ],
+  "responsive": "yes",
+  "declined": "no"
+ },
+ "off-capital": {
+  "verdicts": [
+   "unsupported"
+  ],
+  "responsive": "yes",
+  "declined": "no"
+ }
+}

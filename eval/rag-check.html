@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Check answer citations</title>
+<style>
+    :root { --bg: #fafaf8; --fg: #2a2a2a; --muted: #999; --line: #e0e0e0; --pick: #fff6d6; --pick-line: #e0b84a; }
+    @media (prefers-color-scheme: dark) { :root { --bg: #1a1a1a; --fg: #e0e0e0; --muted: #888; --line: #333; --pick: #3a3320; --pick-line: #b8963a; } }
+    body { background: var(--bg); color: var(--fg); font: 16px/1.5 Georgia, serif; max-width: 760px; margin: 0 auto; padding: 16px; }
+    .hint, .progress, .q { color: var(--muted); font-size: 0.85em; }
+    .unit { font-size: 1.15em; margin: 12px 0; padding: 12px; border-left: 3px solid var(--pick-line); }
+    .tweet { border: 1px solid var(--line); padding: 10px 12px; margin: 8px 0; border-radius: 2px; }
+    .choices { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0; }
+    button { font: inherit; font-size: 0.9em; padding: 6px 12px; cursor: pointer; }
+    button.on { background: var(--pick); border-color: var(--pick-line); }
+    nav { display: flex; gap: 8px; margin-top: 16px; }
+</style>
+</head>
+<body>
+<h1>Check answer citations</h1>
+<p class="hint">A small model wrote each sentence below and cited the tweets under it. Pick the verdict that fits: supported (a cited tweet says it), partly (the main idea is there, but it adds something), unsupported (no cited tweet says it), or no claim. The full rubric is in eval/rag-judge-rubric.md. Saved in this browser as you go.</p>
+<p class="progress" id="progress"></p>
+<p class="q" id="question"></p>
+<div class="unit" id="unit"></div>
+<div id="tweets"></div>
+<div class="choices" id="choices"></div>
+<nav>
+    <button id="prev">← prev</button>
+    <button id="next">next →</button>
+    <button id="download">download rag-adam.json</button>
+</nav>
+<script>
+    const STORE = 'rag-check';
+    const VERDICTS = ['supported', 'partly', 'unsupported', 'no-claim'];
+    let data, at = 0, marks = {};
+    try { marks = JSON.parse(localStorage.getItem(STORE) || '{}'); } catch {}
+    const key = u => `${u.id}#${u.unit}`;
+    const save = () => { try { localStorage.setItem(STORE, JSON.stringify(marks)); } catch {} };
+
+    function render() {
+        const u = data.units[at];
+        const done = data.units.filter(x => marks[key(x)]).length;
+        document.getElementById('progress').textContent = `${at + 1} of ${data.units.length} · ${done} marked`;
+        document.getElementById('question').textContent = `Question: ${u.question}`;
+        document.getElementById('unit').textContent = u.text;
+        const tw = document.getElementById('tweets');
+        tw.replaceChildren(...(u.cited.length ? u.cited : [{ n: '', tweet: '(cites no tweet)' }]).map(c => {
+            const d = document.createElement('div');
+            d.className = 'tweet';
+            d.textContent = c.n ? `[${c.n}] ${c.tweet}` : c.tweet;
+            return d;
+        }));
+        document.getElementById('choices').replaceChildren(...VERDICTS.map(v => {
+            const b = document.createElement('button');
+            b.textContent = v;
+            if (marks[key(u)] === v) b.className = 'on';
+            b.onclick = () => { marks[key(u)] = v; save(); if (at < data.units.length - 1) at++; render(); };
+            return b;
+        }));
+    }
+
+    document.getElementById('prev').onclick = () => { at = Math.max(0, at - 1); render(); };
+    document.getElementById('next').onclick = () => { at = Math.min(data.units.length - 1, at + 1); render(); };
+    document.getElementById('download').onclick = () => {
+        const out = { run: data.run, verdicts: data.units.map(u => ({ id: u.id, unit: u.unit, verdict: marks[key(u)] || null })) };
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(new Blob([JSON.stringify(out, null, 1) + '\n'], { type: 'application/json' }));
+        a.download = 'rag-adam.json';
+        a.click();
+    };
+
+    fetch('rag-check.json').then(r => r.json()).then(d => { data = d; render(); });
+</script>
+</body>
+</html>

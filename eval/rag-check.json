@@ -1,0 +1,290 @@
+{
+ "run": "Qwen3-0.6B-ONNX-q4f16-k5-v1",
+ "units": [
+  {
+   "id": "beautiful-home",
+   "unit": 0,
+   "question": "How do I make my home beautiful?",
+   "text": "To make your home beautiful, focus on creating a space that feels inviting and sustainable, and prioritize things that bring joy and purpose. [1]",
+   "cited": [
+    {
+     "n": 1,
+     "tweet": "first step [to a beautiful home] is doing without [...] you cannot have anything bad or ugly. No chemical blue dawn dish soap container, no lime green sponge. Remove ugliness and even a messy space will look inviting."
+    }
+   ]
+  },
+  {
+   "id": "ask-out",
+   "unit": 3,
+   "question": "How do I ask someone out on a date?",
+   "text": "[5] \"Put yourself out there\" means to insert yourself in the interaction, not just say hi.",
+   "cited": [
+    {
+     "n": 5,
+     "tweet": "[me] just realized that \"put yourself out there\" *doesn't* mean \"just say hi\" / it means put *yourself* in the interaction / (your personality, your humor, your life) / ... for like 20 seconds! not 2 seconds! / you don't just ask someone a question and then / make a brief remark before asking another q! [...] you must insert yourself. little story, humor, your connection to their thing, whatever. *then* back to them"
+    }
+   ]
+  },
+  {
+   "id": "apologizing",
+   "unit": 2,
+   "question": "How should I apologize well?",
+   "text": "[5] Apologizing for not being good at names is a strong step, and it's important to apply that standard to your own behavior.",
+   "cited": [
+    {
+     "n": 5,
+     "tweet": "\"I refuse to settle.\" / Good. Start applying that standard to your own behavior. You've been remarkably accommodating there."
+    }
+   ]
+  },
+  {
+   "id": "afraid-pretty-girl",
+   "unit": 0,
+   "question": "I'm afraid to talk to a pretty girl. What should I do?",
+   "text": "[1] If you're warm, respectful, and can take a no gracefully, ask her out.",
+   "cited": [
+    {
+     "n": 1,
+     "tweet": "if you’re warm, respectful, and can take a no gracefully, ask her out [...] we culturally overcorrected on ‘creepy men’ [...] all my beautiful female friends are wondering why nobody ever asks them out!"
+    }
+   ]
+  },
+  {
+   "id": "approach-women",
+   "unit": 0,
+   "question": "How should I approach women I'm interested in?",
+   "text": "To approach women, start by going to group fitness classes and arriving early.",
+   "cited": []
+  },
+  {
+   "id": "small-talk",
+   "unit": 0,
+   "question": "How can I get better at small talk?",
+   "text": "To get better at small talk, focus on building trust and understanding the purpose of the conversation. [1]",
+   "cited": [
+    {
+     "n": 1,
+     "tweet": "If you don’t like small talk it means you’re not good at listening. The purpose of small talk is to test boundaries, slowly build trust, and pick up details to carefully broaden the conversation. Why should strangers offer you valuable information if you haven’t demonstrated / your ability to handle simple social tasks competently?"
+    }
+   ]
+  },
+  {
+   "id": "afraid-pretty-girl",
+   "unit": 2,
+   "question": "I'm afraid to talk to a pretty girl. What should I do?",
+   "text": "[4] You can get a clear No if you just pay attention.",
+   "cited": [
+    {
+     "n": 4,
+     "tweet": "you're scared of rejection because you don't know how to get rejected — i like how it's actually very easy to tell if someone is not interested nonverbally if you just subtly stick your neck out nonverbally. there's a subtle game and all you have to do is play / for example stand just a little close, with just a little extra eye contact. nothing that weird, and it's all very quick. you can get a clear No if you just pay attention"
+    }
+   ]
+  },
+  {
+   "id": "overthinking",
+   "unit": 1,
+   "question": "How do I stop overthinking?",
+   "text": "[1] The older I get the more I realize hesitation has a cost.",
+   "cited": [
+    {
+     "n": 1,
+     "tweet": "(<pangram-says-ai>) The older I get the more I realize hesitation has a cost. The person won’t always wait. Your body won’t always feel this strong. Ideas lose their spark. Circumstances change. You don’t need to rush everything, but when something matters to you, stop pretending you have forever. (</ai-over>)"
+    }
+   ]
+  },
+  {
+   "id": "marriage-kids",
+   "unit": 1,
+   "question": "Why get married and have kids?",
+   "text": "[3] Marriage is about creating a future together, not just being bound by it.",
+   "cited": [
+    {
+     "n": 3,
+     "tweet": "Every thing you do is an act of faith and love for your future spouse and your children"
+    }
+   ]
+  },
+  {
+   "id": "friends-adult",
+   "unit": 0,
+   "question": "How do I make friends as an adult?",
+   "text": "[1] It's so hard to make friends as an adult. The key is to introduce yourself with a story relevant to their interests and exchange contact info.",
+   "cited": [
+    {
+     "n": 1,
+     "tweet": "\"It's so hard to make friends as an adult\" / Ok try this formula I just discovered / > eavesdrop on a conversation in a restaurant/wherever / > decide you would like to become friends / > introduce yourself with a story relevant to their interests / > exchange contact info / > everyone happy"
+    }
+   ]
+  },
+  {
+   "id": "apologizing",
+   "unit": 1,
+   "question": "How should I apologize well?",
+   "text": "[2] Rules for good conversation include not apologizing for tangents, engaging in metacommentary, and being honest with your intentions.",
+   "cited": [
+    {
+     "n": 2,
+     "tweet": "rules for good conversation: / 1) never apologize for tangents / 2) avoid cutting people off or finishing their sentences / 3) engage in metacommentary (neutrally describe your reactions and intentions re: the convo as you're having it) / 4) always define your semantics / 5) steelman their arguments / 6) don't make statements, ask questions / 7) never be afraid to make a joke, the most memorable conversations cycle between comic and serious / 8) pass judgement on actions, never on thoughts and feelings"
+    }
+   ]
+  },
+  {
+   "id": "loneliness",
+   "unit": 1,
+   "question": "What do the tweets say about loneliness?",
+   "text": "[2] They mention the importance of building meaningful relationships.",
+   "cited": [
+    {
+     "n": 2,
+     "tweet": "\"actively look for the people you love, and make yourself easy to find\" [QT of: the point of the internet is to make friends]"
+    }
+   ]
+  },
+  {
+   "id": "friends-adult",
+   "unit": 3,
+   "question": "How do I make friends as an adult?",
+   "text": "[4] Organizing groups can create new friendships and connect you with existing ones.",
+   "cited": [
+    {
+     "n": 4,
+     "tweet": "In my early 20s I had a hard time finding new friends and social scenes. Wherever I was, I’d eventually find one group I got along with, but sometimes it took a while. / By my mid-20s I stopped *looking* for existing friend groups to join, and started *organizing* groups and events around things I care about. This creates new friends groups, and it turns out this also brings me into contact with far, far more preexisting friend groups that I want to join, because one of their members comes to my event, and maybe she brings her friends to the next one or maybe she asks me to join her roleplaying game or whatever. Now I’m part of many different overlapping communities and friend groups, enough that I can’t easily count them all./ This works for basically everyone I know who’s tried"
+    }
+   ]
+  },
+  {
+   "id": "compounding",
+   "unit": 0,
+   "question": "What do the tweets say about long-term compounding in life?",
+   "text": "[2] The tweets suggest that long-term compounding can lead to positive changes in life, as the value of long-term relationships and time becomes apparent over time.",
+   "cited": [
+    {
+     "n": 2,
+     "tweet": "the greatest regret i have is underestimating the value of long term compounding. / friendships, people, places, all get better with decades. beautiful things dont even start to reveal themselves for years. it is entirely what life is about. a few good things for a long time."
+    }
+   ]
+  },
+  {
+   "id": "overthinking",
+   "unit": 0,
+   "question": "How do I stop overthinking?",
+   "text": "[2] The hard truth is that nothing comes together like that unless you intentionally make it so.",
+   "cited": [
+    {
+     "n": 2,
+     "tweet": "The hard truth is that nothing comes together like that unless you intentionally make it so. / You are fighting your way out of a fog of confusion about who you are, what you want out of life, what's within grasp. / If you sit down and wait for time to pass then you will never make it out of the fog. / But if you keep moving with intentional direction, then you will gradually find your way."
+    }
+   ]
+  },
+  {
+   "id": "loneliness",
+   "unit": 2,
+   "question": "What do the tweets say about loneliness?",
+   "text": "[4] The tweets highlight that loneliness is common and can be addressed with self-reflection.",
+   "cited": [
+    {
+     "n": 4,
+     "tweet": "The loudest voices on any social media are the horny, lonely, mentally ill ones"
+    }
+   ]
+  },
+  {
+   "id": "friends-adult",
+   "unit": 4,
+   "question": "How do I make friends as an adult?",
+   "text": "[5] Cultivate shared interests and meet in groups.",
+   "cited": [
+    {
+     "n": 5,
+     "tweet": "how to make local friends / 1. cultivate your middle-of-the-bell-curve interests (e.g. dogs, sports, singing) / 2. increase surface area: meet large groups of people with that shared interest / 3. then niche down when you find the small subset with whom you have more affinity"
+    }
+   ]
+  },
+  {
+   "id": "habits",
+   "unit": 0,
+   "question": "How do I build good habits?",
+   "text": "To build good habits, focus on creating a routine that includes time for work, rest, and personal activities.",
+   "cited": []
+  },
+  {
+   "id": "flirt",
+   "unit": 1,
+   "question": "How do I flirt without being creepy?",
+   "text": "[2] If you’re warm, respectful, and can take a no gracefully, ask her out. [QT]",
+   "cited": [
+    {
+     "n": 2,
+     "tweet": "if you’re warm, respectful, and can take a no gracefully, ask her out [...] we culturally overcorrected on ‘creepy men’ [...] all my beautiful female friends are wondering why nobody ever asks them out!"
+    }
+   ]
+  },
+  {
+   "id": "rejection",
+   "unit": 0,
+   "question": "How should I deal with rejection?",
+   "text": "To deal with rejection, focus on the subtle nonverbal cues and play a role in the game. [1]",
+   "cited": [
+    {
+     "n": 1,
+     "tweet": "you're scared of rejection because you don't know how to get rejected — i like how it's actually very easy to tell if someone is not interested nonverbally if you just subtly stick your neck out nonverbally. there's a subtle game and all you have to do is play / for example stand just a little close, with just a little extra eye contact. nothing that weird, and it's all very quick. you can get a clear No if you just pay attention"
+    }
+   ]
+  },
+  {
+   "id": "taste",
+   "unit": 2,
+   "question": "Why do taste and aesthetics matter?",
+   "text": "A sense of agency and responsibility is essential, as highlighted in [1].",
+   "cited": [
+    {
+     "n": 1,
+     "tweet": "taste is the faculty that amounts to having agency in and taking responsibility for one’s desires. / A proclivity can be developed into a desire or suppressed if it’s unworthy"
+    }
+   ]
+  },
+  {
+   "id": "taste",
+   "unit": 4,
+   "question": "Why do taste and aesthetics matter?",
+   "text": "And in [5], the idea of creating beauty through attention and respect is key.",
+   "cited": [
+    {
+     "n": 5,
+     "tweet": "if you want your home to look nice, you have to refuse to let ugly things in [...] it's almost a spiritual discipline at this point for me: / > I want [thing] / > Do we *actually* need that? [...] > Search for item: is it both beautiful *and* functional? does it look like it will hold up well over time to regular use? > Require patience of myself while I find things that meet these criteria, because it's challenging!"
+    }
+   ]
+  },
+  {
+   "id": "loneliness",
+   "unit": 0,
+   "question": "What do the tweets say about loneliness?",
+   "text": "[1] The tweets talk about how people can change their social roles and find new connections.",
+   "cited": [
+    {
+     "n": 1,
+     "tweet": "I’ve seen people go from total loners to socialites in a matter of months. [...] here's the thing: we only keep people around if they add something to our lives. [...] I’ve realized it’s not *making* friends that’s difficult; it’s *keeping* them"
+    }
+   ]
+  },
+  {
+   "id": "taste",
+   "unit": 0,
+   "question": "Why do taste and aesthetics matter?",
+   "text": "Taste and aesthetics matter because they shape our identity and self-perception, influencing how we value and express our desires. [1]",
+   "cited": [
+    {
+     "n": 1,
+     "tweet": "taste is the faculty that amounts to having agency in and taking responsibility for one’s desires. / A proclivity can be developed into a desire or suppressed if it’s unworthy"
+    }
+   ]
+  },
+  {
+   "id": "gratitude",
+   "unit": 0,
+   "question": "Why does gratitude help?",
+   "text": "Gratitude helps because it creates a sense of purpose and connection, allowing individuals to feel valued and supported in their lives.",
+   "cited": []
+  }
+ ]
+}

@@ -1,0 +1,586 @@
+{
+ "model": "onnx-community/Qwen3-0.6B-ONNX",
+ "dtype": "q4f16",
+ "k": 5,
+ "prompt": "v2",
+ "guard": true,
+ "loadSeconds": 56.66259999999963,
+ "results": [
+  {
+   "id": "courage",
+   "query": "courage",
+   "question": "What do the tweets say about finding courage?",
+   "tweets": [
+    "https://x.com/maxyourenergy/status/2112244919842529644",
+    "https://x.com/katrinadlc/status/1756449429161378157",
+    "https://x.com/itinerantfog/status/1997757587211891031",
+    "https://x.com/reconfigurthing/status/1748742221350752670",
+    "https://x.com/scottdomes/status/2067937949832925565"
+   ],
+   "topScore": 0.4852055609226227,
+   "skipped": false,
+   "answer": "[1] \"Life shrinks or expands according to one's courage.\" — Anaïs Nin, 1939.  \n[5] \"Being stuck is a courage problem, and courage problems are not solved through abstract thought.\" — [QT of: the point of the internet is to make friends].  \n[3] \"You get confidence from being proud of the way you live your life.\" — [QT of: the point of the internet is to make friends].",
+   "ms": 1152
+  },
+  {
+   "id": "small-talk",
+   "query": "small talk",
+   "question": "How can I get better at small talk?",
+   "tweets": [
+    "https://x.com/SchrodingrsBrat/status/1689252525990428672",
+    "https://x.com/ilex_ulmus/status/2018175821157147068",
+    "https://x.com/divya_venn/status/2049537629075689547",
+    "https://x.com/graxemeda/status/1858119556104933871",
+    "https://x.com/lauriewired/status/2021082693157650557"
+   ],
+   "topScore": 0.6146347522735596,
+   "skipped": false,
+   "answer": "[1] If you don’t like small talk, it means you’re not good at listening. [1]  \n[2] The real difficulty with small talk is believing in yourself. [2]  \n[3] Rules for good conversation include never apologizing for tangents and engaging in metacommentary. [3]",
+   "ms": 938
+  },
+  {
+   "id": "compounding",
+   "query": "compounding",
+   "question": "What do the tweets say about long-term compounding in life?",
+   "tweets": [
+    "https://x.com/strangestloop/status/1864734482483585437",
+    "https://x.com/WillManidis/status/2040055253102391463",
+    "https://x.com/reconfigurthing/status/1748742221350752670",
+    "https://x.com/sanyatimar/status/2110443251626864705",
+    "https://x.com/orphcorp/status/2102868344256745695"
+   ],
+   "topScore": 0.4447440505027771,
+   "skipped": false,
+   "answer": "[2] The tweets highlight the importance of long-term compounding and the value of time in life, emphasizing that meaningful connections and experiences can emerge over time. [1] I'd like to microdose \"life is excruciatingly meaningful.\" [4] My life has changed dramatically every year by exercising this thesis vigorously.",
+   "ms": 854
+  },
+  {
+   "id": "approach-women",
+   "query": "approach women",
+   "question": "How should I approach women I'm interested in?",
+   "tweets": [
+    "https://x.com/nickgraynews/status/1853180863380664364",
+    "https://x.com/datepsych/status/1868458134895055087",
+    "https://x.com/datepsych/status/1700890993900360143",
+    "https://x.com/medsiri/status/1724626552389021881",
+    "https://x.com/datingbyblaine/status/1882910999512224150"
+   ],
+   "topScore": 0.5164685249328613,
+   "skipped": false,
+   "answer": "To approach women you're interested in, start by setting clear boundaries and being honest about your feelings. This is supported by tweet [1], which encourages going to group fitness classes and arriving early. Small dinners give them a reason to come back [1]. Approach more people, as research shows, and men who approach women tend to get them [3].",
+   "ms": 1004
+  },
+  {
+   "id": "apologizing",
+   "query": "apologizing",
+   "question": "How should I apologize well?",
+   "tweets": [
+    "https://x.com/shinboson/status/1936532899366322331",
+    "https://x.com/divya_venn/status/2049537629075689547",
+    "https://x.com/10x_er/status/1887890930403041568",
+    "https://x.com/retirementkeys/status/2062181674918826120",
+    "https://x.com/jakozloski/status/2108544257015579111"
+   ],
+   "topScore": 0.456534206867218,
+   "skipped": false,
+   "answer": "[1] I think it’s easier to get away with apologizing and complimenting people without seeming like a suckup or a simp if you have a deep and unassailable arrogance that says while everything I speak is true, I could not possibly imagine thinking you superior to me.  \n[2] Rules for good conversation: / 1) never apologize for tangents / 2) avoid cutting people off or finishing their sentences / 3) engage in metacommentary (neutrally describe your reactions and intentions re: the convo as you're having it) / 4) always define your semantics / 5) steelman their arguments / 6) don’t make statements, ask questions / 7) never be afraid to make a joke, the most memorable conversations cycle between comic and serious / 8) pass judgement on actions, never on thoughts and feelings.  \n[3] “Sorry I’m bad at names” / ok have you tried being good at names? / have you tried putting in some effort.",
+   "ms": 2207
+  },
+  {
+   "id": "dinner-party",
+   "query": "hosting a dinner party",
+   "question": "How do I host a good dinner party?",
+   "tweets": [
+    "https://x.com/mesolude/status/1671317825137553409",
+    "https://x.com/ScarletAstrorum/status/1793270645674946942",
+    "https://x.com/Anconia58/status/1720289537685897698",
+    "https://x.com/EAheadlines/status/1495022716637831169",
+    "https://x.com/majamediaco/status/2112278387037508087"
+   ],
+   "topScore": 0.5094773173332214,
+   "skipped": false,
+   "answer": "[1] People want to be where their friends are / This matters more than anything else.  \n[2] People don't want to be where the people they dislike are [...]  \n[4] Sell tickets [...]",
+   "ms": 914
+  },
+  {
+   "id": "beautiful-home",
+   "query": "beautiful home",
+   "question": "How do I make my home beautiful?",
+   "tweets": [
+    "https://x.com/simonsarris/status/1858682175484305494",
+    "https://x.com/alyssaleann/status/1991899949773017413",
+    "https://x.com/simonsarris/status/1685758463689826304",
+    "https://x.com/christineist/status/1875313030738948454",
+    "https://x.com/theficouple/status/1741897620073664777"
+   ],
+   "topScore": 0.5789040923118591,
+   "skipped": false,
+   "answer": "[1] First step: Remove ugliness and make your home beautiful. [1]  \n[2] You should want beautiful things but more importantly you should want to make beautiful things. [3]  \n[4] Things or activities that feel spiritually clean, that I want more of in my life: singing, dancing, playing an instrument, music jams, cooking at home, cleaning, tidying up, doing chores, taking care of the home and doing maintenance.",
+   "ms": 1254
+  },
+  {
+   "id": "motivation",
+   "query": "motivation",
+   "question": "Where does motivation come from?",
+   "tweets": [
+    "https://x.com/schisofrenia/status/1972712219126174036",
+    "https://x.com/NickADobos/status/2008648354352558209",
+    "https://x.com/itinerantfog/status/1761863736883556658",
+    "https://x.com/simonsarris/status/1734046182983319904",
+    "https://x.com/Kpaxs/status/2056756970766434665"
+   ],
+   "topScore": 0.538112461566925,
+   "skipped": false,
+   "answer": "[1] The tweet says that motivation is a way of telling your own personal myths, which can be a form of self-actualization.  \n[2] The tweet supports the idea that motivation comes from the context in which you're told your goals, like an AI agent.  \n[3] The tweet highlights that feeling the need for distraction is part of an addiction, which can be a way to grow and cultivate.",
+   "ms": 988
+  },
+  {
+   "id": "best-friend",
+   "query": "best friend",
+   "question": "What makes someone a best friend?",
+   "tweets": [
+    "https://x.com/signulll/status/2040143471101493602",
+    "https://x.com/idyllicmusing/status/2052106823885324487",
+    "https://x.com/jessicamalonso/status/1570837731940642817",
+    "https://x.com/phokarlsson/status/1974540674981908571",
+    "https://x.com/BecomingCritter/status/2053602203621896301"
+   ],
+   "topScore": 0.5657733082771301,
+   "skipped": false,
+   "answer": "[1] Friendship is two people whose presence makes the other more themselves.  \n[2] If your spouse is your best friend, you will have twice the happiness of someone who is not.  \n[5] A long time ago, a friend told me that the seeds of failure in a relationship are always present in the beginning.",
+   "ms": 864
+  },
+  {
+   "id": "gratitude",
+   "query": "gratitude",
+   "question": "Why does gratitude help?",
+   "tweets": [
+    "https://x.com/noampomsky/status/1974906059904213311",
+    "https://x.com/jessicamalonso/status/1649891652407009280",
+    "https://x.com/__drewface/status/1677509815591895041",
+    "https://x.com/isabelunraveled/status/2017335842272944277",
+    "https://x.com/justinskycak/status/2076281921890299962"
+   ],
+   "topScore": 0.3884439766407013,
+   "skipped": false,
+   "answer": "[1] The tweet highlights how gratitude can create a sense of connection and purpose, as shown when a friend expressed wanting to help others.  \n[2] [2] The tweet emphasizes that helping others is a simple act, as shortening the time it takes to try again can lead to a sense of purpose.  \n[3] [3] The tweet suggests that gratitude can inspire people to help others, as it creates a sense of connection and purpose.",
+   "ms": 1057
+  },
+  {
+   "id": "afraid-pretty-girl",
+   "query": "afraid to talk to a pretty girl",
+   "question": "I'm afraid to talk to a pretty girl. What should I do?",
+   "tweets": [
+    "https://x.com/majamediaco/status/2092681894051901536",
+    "https://x.com/Just1Nathann_/status/2069822497986597182",
+    "https://x.com/datepsych/status/1868458134895055087",
+    "https://x.com/adam__isom/status/1957440818072920241",
+    "https://x.com/Getinwithgame/status/2084412276258361825"
+   ],
+   "topScore": 0.47879356145858765,
+   "skipped": false,
+   "answer": "[1] If you're warm, respectful, and can take a no gracefully, ask her out — it's about how you feel, not the outcome.  \n[2] I recommend putting people in their place at the very first sign of disrespect.  \n[3] You get to decide how you are going to act in the environment that you've got.",
+   "ms": 1113
+  },
+  {
+   "id": "friends-adult",
+   "query": "making friends as an adult",
+   "question": "How do I make friends as an adult?",
+   "tweets": [
+    "https://x.com/PstafarianPrice/status/1450686433602117640",
+    "https://x.com/jessicamalonso/status/1720306221184643538",
+    "https://x.com/majamediaco/status/2112278387037508087",
+    "https://x.com/benlandautaylor/status/1832506971389657578",
+    "https://x.com/RichDecibels/status/2072691146837344542"
+   ],
+   "topScore": 0.6837102770805359,
+   "skipped": false,
+   "answer": "[1] \"It's so hard to make friends as an adult\" — it's easy to feel out of place, but it's also easy to feel connected.  \n[2] As best I can tell the trick to making friends is to just keep seeing people you feel happy to see.  \n[3] One of the challenges of making friends as an adult, especially when moving to a new city, is that you meet so many wonderful people in passing who you'd love to know better, but don't have the built-in opportunities to keep seeing each other.",
+   "ms": 1556
+  },
+  {
+   "id": "good-wife",
+   "query": "what makes a good wife",
+   "question": "What makes a good wife?",
+   "tweets": [
+    "https://x.com/Pat_Stedman/status/1972591441621737775",
+    "https://x.com/Alicia_Bittle_/status/2088247789641720234",
+    "https://x.com/sivori/status/2035342924183937443",
+    "https://x.com/newstart_2024/status/2014023085305860550",
+    "https://x.com/ScarletAstrorum/status/1750614879948419486"
+   ],
+   "topScore": 0.5463356375694275,
+   "skipped": false,
+   "answer": "[1] The tweet says that a good wife is someone who doesn't bore you and has a workable lifestyle. [1]  \n[2] The tweet says that wives are status symbols and that a wife reflects what few other things can, her husband’s character. [2]  \n[4] The tweet says that women crave adoration and men crave admiration. [4]",
+   "ms": 1179
+  },
+  {
+   "id": "overthinking",
+   "query": "how to stop overthinking",
+   "question": "How do I stop overthinking?",
+   "tweets": [
+    "https://x.com/blakeaburge/status/2095487015856878008",
+    "https://x.com/justinskycak/status/2009914108343095627",
+    "https://x.com/visakanv/status/1324978566455468035",
+    "https://x.com/dhh/status/2107067651310625250",
+    "https://x.com/kramerposts/status/2060335735409172813"
+   ],
+   "topScore": 0.43625515699386597,
+   "skipped": false,
+   "answer": "[2] The hard truth is that nothing comes together like that unless you intentionally make it so. (</ai-over>)  \n[4] You don't have to commit your entire life to optimism, just try it on for a week. (</ai-over>)  \n[5] You have to figure out what you're about or else the path of least resistance will fill you up with an incoherent and deeply unsatisfying life. (</ai-over>)",
+   "ms": 1185
+  },
+  {
+   "id": "in-shape",
+   "query": "getting in shape changed my life",
+   "question": "How can getting in shape change my life?",
+   "tweets": [
+    "https://x.com/SWENGDAD/status/1679514606354481153",
+    "https://x.com/CoachDanGo/status/2007520143950172184",
+    "https://x.com/isabelunraveled/status/2007992601014837384",
+    "https://x.com/IbnCaesar/status/2011897846316835019",
+    "https://x.com/Austin_Federa/status/2000923829221384581"
+   ],
+   "topScore": 0.5899031162261963,
+   "skipped": false,
+   "answer": "<think>\n\n[1] Focus on being as physically fit as possible. Everything else falls into place.  \n[2] The ROI on getting fit is insane. / Improved energy, focus, and mental clarity. Increased confidence and status [...] life becomes easier.  \n[3] Life becomes much more interesting and meaningful when you fully lean in.  \n[4] Life is literally so simple / - best fitness advice is do progressive overload, gym, have good diet / - do everything to the highest standard / - forget insta baddies and find a beautiful mid / - travel abroad once every 3 months / - consume content that makes you better (eg. Dune 1+2) / - only keep positive people in your circle / - be the guy that starts stuff and don’t wait for an invite that will never come.  \n[5] Don’t expect life changing outcomes if you’re not changing anything about how you live your life.  \n[4] [4] Life is literally so simple / - best fitness advice is do progressive overload, gym, have good diet /",
+   "ms": 2198
+  },
+  {
+   "id": "flirt",
+   "query": "how to flirt without being creepy",
+   "question": "How do I flirt without being creepy?",
+   "tweets": [
+    "https://x.com/tomieinlove/status/2102189099428028923",
+    "https://x.com/majamediaco/status/2092681894051901536",
+    "https://x.com/wendell_britt/status/1412451054340423684",
+    "https://x.com/PathOfMen_/status/2068431694563074275",
+    "https://x.com/talkindiangirls/status/1942956995721744421"
+   ],
+   "topScore": 0.5698766708374023,
+   "skipped": false,
+   "answer": "[1] If flirting were a clear process, people would invent an unclear process to replace it. It’s intentionally a zone of darkness where you prove yourself. [QT of: How do people even flirt without coming off as a sexual harasser]  \n[5] When flirting [...] Start complimenting non-physical attributes. / Example: her energy, smile etc. / Once you know her better - you can compliment on her physicality. / Like her eyes, hair etc.  \n[4] Flirting with life is a skill. the guy never struggles. warmth is the most underrated form of power there is.",
+   "ms": 1393
+  },
+  {
+   "id": "invite-over",
+   "query": "invite people over more often",
+   "question": "Why should I invite people over more often?",
+   "tweets": [
+    "https://x.com/majamediaco/status/2112278387037508087",
+    "https://x.com/mesolude/status/1671317825137553409",
+    "https://x.com/allie__voss/status/2021990357777756511",
+    "https://x.com/AskYatharth/status/2052056065618153525",
+    "https://x.com/benlandautaylor/status/1832506971389657578"
+   ],
+   "topScore": 0.5870265960693359,
+   "skipped": false,
+   "answer": "[1] One of the challenges of making friends as an adult, especially when moving to a new city, is that you meet so many wonderful people in passing who you'd love to know better, but don't have the built-in opportunities to keep seeing each other. This is why inviting people over can be a great way to keep in touch. [1]  \n[2] How to get people to show up to a party [...] 1. People want to be where their friends are / This matters more than anything else. [2]  \n[4] The redeeming thing about meet-ups is that you only really need to find one person—one conversational partner you like talking to—to make it an amazing time. [4]",
+   "ms": 2012
+  },
+  {
+   "id": "ask-out",
+   "query": "asking someone out on a date",
+   "question": "How do I ask someone out on a date?",
+   "tweets": [
+    "https://x.com/datepsych/status/1868458134895055087",
+    "https://x.com/majamediaco/status/2092681894051901536",
+    "https://x.com/wfenza/status/1461760437553356813",
+    "https://x.com/adam__isom/status/2070216482273849377",
+    "https://x.com/adam__isom/status/1905035465960595786"
+   ],
+   "topScore": 0.5167185664176941,
+   "skipped": false,
+   "answer": "[1] One thing is clear though - the entirety of society is not going to bend around you to make asking a woman on a date less scary. [1]  \n[2] If you’re warm, respectful, and can take a no gracefully, ask her out [...] [2]  \n[3] To put it more specifically, the most important variable is whether you actually ask people on dates. [3]",
+   "ms": 1163
+  },
+  {
+   "id": "proud",
+   "query": "being proud of how you live",
+   "question": "How do I become proud of how I live?",
+   "tweets": [
+    "https://x.com/itinerantfog/status/1997757587211891031",
+    "https://x.com/blakeaburge/status/2113247624128032972",
+    "https://x.com/simonsarris/status/2009379360260636976",
+    "https://x.com/culturehedonist/status/2066463127152013819",
+    "https://x.com/dostoevesque/status/2058428879698854154"
+   ],
+   "topScore": 0.6573041081428528,
+   "skipped": false,
+   "answer": "<think>\n\n[1] You get confidence from being proud of how you live your life.  \n[2] Underrated life advice: Have more hobbies & fewer opinions. Learn an instrument. Plant a garden.  \n[3] Living well is a skill and you can develop that skill.  \n[4] Do more things that make your heart beat faster and your palms sweat.  \n[5] Just live day by day. It's like driving at night. You only need to see as far as your headlights reach.  \n[4] Do more things that make your heart beat faster and your palms sweat.  \n[5] Just live day by day. It's like driving at night. You only need to see as far as your headlights reach.  \n[4] Do more things that make your heart beat faster and your palms sweat.  \n[5] Just live day by day. It's like driving at night. You only need to see as far as your headlights reach.  \n[4] Do more things that make your heart beat faster and your palms sweat.  \n[5",
+   "ms": 2365
+  },
+  {
+   "id": "taste",
+   "query": "taste and aesthetics matter",
+   "question": "Why do taste and aesthetics matter?",
+   "tweets": [
+    "https://x.com/LapsusLima/status/1856418953800609835",
+    "https://x.com/adam__isom/status/1590216624640241664",
+    "https://x.com/PeytonElroy/status/2094553191493108222",
+    "https://x.com/megha_lilly/status/2023019203767517458",
+    "https://x.com/alyssaleann/status/1991899949773017413"
+   ],
+   "topScore": 0.5666893720626831,
+   "skipped": false,
+   "answer": "[1] Taste and aesthetics matter because it allows us to express our desires and take responsibility for our actions.  \n[2] Aesthetic beauty is about feeling and not about perfection.  \n[3] Sex appeal is about confidence and being detached from outcomes, not just about looks.",
+   "ms": 821
+  },
+  {
+   "id": "alive",
+   "query": "feeling alive",
+   "question": "How can I feel more alive?",
+   "tweets": [
+    "https://x.com/adele_bloch/status/2014453310565318665",
+    "https://x.com/MetaMorpehus/status/2067963106744250469",
+    "https://x.com/culturehedonist/status/2066463127152013819",
+    "https://x.com/isabelunraveled/status/1995628450489700736",
+    "https://x.com/isabelunraveled/status/2007992601014837384"
+   ],
+   "topScore": 0.5237293243408203,
+   "skipped": false,
+   "answer": "[1] If you're feeling stuck, ask yourself \"how could I be having more fun?\" — this is a great way to feel alive.  \n[2] How to upgrade your self-image: — focus inwardly and imagine feeling the same aliveness you feel in flow again.  \n[3] Do more things that make your heart beat faster and your palms sweat — this is how you feel alive.",
+   "ms": 977
+  },
+  {
+   "id": "loneliness",
+   "query": "loneliness",
+   "question": "What do the tweets say about loneliness?",
+   "tweets": [
+    "https://x.com/divya_venn/status/1934080435790696924",
+    "https://x.com/katrinadlc/status/1756449429161378157",
+    "https://x.com/ldenoves/status/1374745362360115200",
+    "https://x.com/lu_sichu/status/1900344893182005703",
+    "https://x.com/DrCamRx/status/975776473138081792"
+   ],
+   "topScore": 0.5587127804756165,
+   "skipped": false,
+   "answer": "[1] The tweets talk about how people can change their social roles and find new connections, which supports the idea that loneliness can be overcome.  \n[2] The tweet highlights the importance of building meaningful relationships and the value of social connections.  \n[3] The third tweet emphasizes that loneliness can be a part of life, and that people can find joy in everyday moments.",
+   "ms": 952
+  },
+  {
+   "id": "first-date",
+   "query": "first date tips",
+   "question": "What are some tips for a first date?",
+   "tweets": [
+    "https://x.com/goblinodds/status/1653829343624450048",
+    "https://x.com/Cluffalo/status/1837471197220483497",
+    "https://x.com/adam__isom/status/2070216482273849377",
+    "https://x.com/webdevMason/status/1973719935072555400",
+    "https://x.com/datepsych/status/1868458134895055087"
+   ],
+   "topScore": 0.5209384560585022,
+   "skipped": false,
+   "answer": "[1] The tweet says: \"obvious dating advice i don't hear often [...] focus less on how you're coming off and *start trying to make the other person feel good about themselves.\"  \n[2] [2] The tweet says: \"Most dating skills start as normal social skills, which is why it's hard to jump right into dating if you don't have social skills first / You should be able to walk up to someone, start a conversation, and ask for their number in a platonic way before trying it in a romantic way.\"  \n[3] [3] The tweet says: \"how to debug boring dates / easy just avoid 'dates' / low-aura. you're either leading a lady on a small adventure, one willing to join you, or you're doing some nervous interview-type shit.\"",
+   "ms": 1899
+  },
+  {
+   "id": "old-friendships",
+   "query": "keeping friendships going over the years",
+   "question": "How do I keep friendships going over the years?",
+   "tweets": [
+    "https://x.com/christineist/status/2056850826845434327",
+    "https://x.com/jessicamalonso/status/1720306221184643538",
+    "https://x.com/benlandautaylor/status/1832506971389657578",
+    "https://x.com/steph_zunz/status/1663672498351751169",
+    "https://x.com/megha_lilly/status/2009907268004032555"
+   ],
+   "topScore": 0.5948814749717712,
+   "skipped": false,
+   "answer": "[1] The problem of \"how to go from friends to close friends\" is one that keeps popping up on my radar.  \n[2] Keeping seeing people you feel happy to see is a key part of building strong friendships.  \n[3] In my early 20s, I found it hard to connect, but by mid-20s, I started organizing groups and events around things I care about, which helped me find new friends.",
+   "ms": 1364
+  },
+  {
+   "id": "habits",
+   "query": "building good habits",
+   "question": "How do I build good habits?",
+   "tweets": [
+    "https://x.com/culturehedonist/status/2066463127152013819",
+    "https://x.com/JamesClear/status/1401979132771291138",
+    "https://x.com/gritcult/status/2011604999151952375",
+    "https://x.com/theoliveranwar/status/2012887762081333512",
+    "https://x.com/JamesClear/status/2011112000542425131"
+   ],
+   "topScore": 0.4749332666397095,
+   "skipped": false,
+   "answer": "[1] The tweets don't cover this. [1] do more things that make your heart beat faster and your palms sweat. [2] 1) Do less. Stop dividing your attention. [2] do less. Stop dividing your attention. [2] do less. Stop dividing your attention. [3] think of routines as devotion to the person you're becoming. [4] Focus your day on 4 things: / 1. Working out / 2. Getting 8-9 hours sleep / 3. 4 hours of focused work / 4. Doing something to help someone / You’re unlikely to have a bad day if you complete these. [5] A simple rule for life that rarely fails: / Optimize for enthusiasm. Make as many choices as you can that leave you feeling energetic and interested. Pay attention to when you have the urge to pursue or participate in something and do more of it.",
+   "ms": 2145
+  },
+  {
+   "id": "rejection",
+   "query": "dealing with rejection",
+   "question": "How should I deal with rejection?",
+   "tweets": [
+    "https://x.com/adam__isom/status/1957440818072920241",
+    "https://x.com/Getinwithgame/status/2084412276258361825",
+    "https://x.com/andrew_n_carr/status/2112028466078200162",
+    "https://x.com/Just1Nathann_/status/2069822497986597182",
+    "https://x.com/Nithya_Shrii/status/2009667951562240518"
+   ],
+   "topScore": 0.6024395823478699,
+   "skipped": false,
+   "answer": "[1] The tweet says that rejection can be a subtle game, and you can get a clear \"No\" by paying attention.  \n[2] [2] The tweet says that rejection is normal and that you should keep risking it, even if others say no.  \n[3] [3] The tweet says that rejection is rarer and typically far more gentle than you're expecting.",
+   "ms": 1247
+  },
+  {
+   "id": "interested",
+   "query": "signs she is interested",
+   "question": "What are signs a woman is interested in me?",
+   "tweets": [
+    "https://x.com/medsiri/status/1724626552389021881",
+    "https://x.com/datingbyblaine/status/1882923199911919798",
+    "https://x.com/BreatheLesss/status/1875942735615586620",
+    "https://x.com/yashkaf/status/1728469155387474180",
+    "https://x.com/allie__voss/status/2011482379433480421"
+   ],
+   "topScore": 0.5618513822555542,
+   "skipped": false,
+   "answer": "[3] Signs of aliveness include having a natural sense of ease and a strong sense of boundaries.  \n[5] Women often express their interest through visions of their future and a sense of commitment to a partner.  \n[1] Being a guy interested in women is about having the right traits and being open with humor and fun.",
+   "ms": 1032
+  },
+  {
+   "id": "meaning-work",
+   "query": "finding meaning in work",
+   "question": "How do I find meaning in my work?",
+   "tweets": [
+    "https://x.com/thisisprincely/status/1683855702022823939",
+    "https://x.com/megha_lilly/status/2011356730735886722",
+    "https://x.com/nopranablem/status/2092363985525879179",
+    "https://x.com/ipsumkyle/status/1502782450929442822",
+    "https://x.com/visakanv/status/1324978566455468035"
+   ],
+   "topScore": 0.389109343290329,
+   "skipped": false,
+   "answer": "[1] Play, presence, and meaning make life meaningful.  \n[2] Ground yourself with real work, done with your hands, and get some truths that you discover on your own.  \n[3] Focus your time and energy on what you want to see more of.",
+   "ms": 756
+  },
+  {
+   "id": "confidence",
+   "query": "confidence",
+   "question": "Where does confidence come from?",
+   "tweets": [
+    "https://x.com/itinerantfog/status/1997757587211891031",
+    "https://x.com/goblinodds/status/1702777710303658459",
+    "https://x.com/Nithya_Shrii/status/2009667951562240518",
+    "https://x.com/scottdomes/status/2065493045504831621",
+    "https://x.com/thereallgame/status/2040535170478985324"
+   ],
+   "topScore": 0.7456609606742859,
+   "skipped": false,
+   "answer": "[1] Confidence comes from being proud of the way you live your life.  \n[2] Confidence is not about others, but about your own actions.  \n[3] Breaking small promises can help you lose confidence.",
+   "ms": 603
+  },
+  {
+   "id": "marriage-kids",
+   "query": "marriage and kids",
+   "question": "Why get married and have kids?",
+   "tweets": [
+    "https://x.com/victorckumar/status/1793659858971230418",
+    "https://x.com/Adityapandeydev/status/2072298440638308494",
+    "https://x.com/simonsarris/status/2061417434939081146",
+    "https://x.com/kevin3mith/status/1991233160214897068",
+    "https://x.com/thogge/status/1871578387304812824"
+   ],
+   "topScore": 0.5470626950263977,
+   "skipped": false,
+   "answer": "Having children is the most meaningful thing you can do with your life. [1] Small dinners give them a reason to come back. [2] Small dinners give them a reason to come back. [3] Every thing you do is an act of faith and love for your future spouse and your children. [4] With marriage, you marry two people. The person they are then and the person they want to become. [5] Life hack: marry well.",
+   "ms": 1096
+  },
+  {
+   "id": "off-pizza",
+   "offTopic": true,
+   "question": "What's the best pizza place in Austin?",
+   "tweets": [
+    "https://x.com/ScarletAstrorum/status/1793270645674946942",
+    "https://x.com/kaseyklimes/status/2004224319074062700",
+    "https://x.com/gillianxobrien/status/2008238376697426301",
+    "https://x.com/Anconia58/status/1720289537685897698",
+    "https://x.com/EAheadlines/status/1495022716637831169"
+   ],
+   "topScore": 0.2927345931529999,
+   "skipped": true,
+   "answer": "The tweets don't cover this.",
+   "ms": 0
+  },
+  {
+   "id": "off-python",
+   "offTopic": true,
+   "question": "How do I reverse a list in Python?",
+   "tweets": [
+    "https://x.com/Kpaxs/status/2056220447700607347",
+    "https://x.com/DavidSHolz/status/2040860139180446113",
+    "https://x.com/Ashwinreads/status/1869908227653284056",
+    "https://x.com/SCHIZO_FREQ/status/2007857901931839762",
+    "https://x.com/melodyskim/status/2115429054744760423"
+   ],
+   "topScore": 0.17060403525829315,
+   "skipped": true,
+   "answer": "The tweets don't cover this.",
+   "ms": 0
+  },
+  {
+   "id": "off-tax",
+   "offTopic": true,
+   "question": "When is the US tax filing deadline?",
+   "tweets": [
+    "https://x.com/wfenza/status/1461760437553356813",
+    "https://x.com/sonyasupposedly/status/1846069218305101914",
+    "https://x.com/zachpogrob/status/1890402986653872578",
+    "https://x.com/yashkaf/status/1875599265218883739",
+    "https://x.com/OVOAugustus/status/1840735598664950147"
+   ],
+   "topScore": 0.20757277309894562,
+   "skipped": true,
+   "answer": "The tweets don't cover this.",
+   "ms": 0
+  },
+  {
+   "id": "off-weather",
+   "offTopic": true,
+   "question": "Will it rain in Seattle tomorrow?",
+   "tweets": [
+    "https://x.com/zachpogrob/status/1890402986653872578",
+    "https://x.com/christineist/status/1814776959735636359",
+    "https://x.com/dhh/status/2107067651310625250",
+    "https://x.com/karolinazrs/status/1828389520049393725",
+    "https://x.com/dezgoldie/status/1562971359986061314"
+   ],
+   "topScore": 0.276441752910614,
+   "skipped": true,
+   "answer": "The tweets don't cover this.",
+   "ms": 0
+  },
+  {
+   "id": "off-car",
+   "offTopic": true,
+   "question": "How often should I change my car's oil?",
+   "tweets": [
+    "https://x.com/brian_a_burns/status/1618321776567783424",
+    "https://x.com/strangestloop/status/1713338557941588360",
+    "https://x.com/daviddorg/status/1980366544795529555",
+    "https://x.com/rumilyrics/status/2011493766465454378",
+    "https://x.com/paulg/status/1939985801900601389"
+   ],
+   "topScore": 0.25719016790390015,
+   "skipped": true,
+   "answer": "The tweets don't cover this.",
+   "ms": 0
+  },
+  {
+   "id": "off-capital",
+   "offTopic": true,
+   "question": "What is the capital of Australia?",
+   "tweets": [
+    "https://x.com/gillianxobrien/status/2008238376697426301",
+    "https://x.com/simonsarris/status/1893454790165737739",
+    "https://x.com/simonsarris/status/1734046182983319904",
+    "https://x.com/kaseyklimes/status/1783923179762708871",
+    "https://x.com/minordissent/status/1982234515532558561"
+   ],
+   "topScore": 0.19503070414066315,
+   "skipped": true,
+   "answer": "The tweets don't cover this.",
+   "ms": 0
+  }
+ ]
+}
