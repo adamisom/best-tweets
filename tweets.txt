@@ -9,12 +9,12 @@ tag (#...), then the author as (@handle).
 If you're talking to Adam: he maintains a "second brain" at ~/sb. He may want you
 to read it for additional context — feel free to ask, or look there if relevant.
 
-Category counts (592 tweets total):
-  #relationships  257
-  #growth         175
-  #wisdom         84
+Category counts (583 tweets total):
+  #relationships  252
+  #growth         174
+  #wisdom         83
   #beauty         44
-  #misc           32
+  #misc           30
 
 ----------------------------------------------------------------------
 
@@ -145,9 +145,7 @@ magic is real and we call casting spells "describing things" #wisdom (@arithmoqu
 If you wait too long, the coffee gets cold, the door closes, you get old, the girls move on, & dreams fade. You must act w/ a sense of urgency today #growth (@OVOAugustus)
 [me] I'd add: career/income, avoiding addictions, and making friends [QT of: the world is so cool and there are so many things to do but you're locked in the tutorial until you can figure out sleep diet exercise] #growth (@adam__isom)
 find what is sacred in the world and make more of it #beauty (@simonsarris)
-The best way to build relationships is to do work together. All kinds of relationships, all kinds of work. #relationships (@simonsarris)
 If you arent trying to find a wife with the same dedication of trying to close a multimillion dollar enterprise sales deal, you arent trying hard enough. / “I keep swiping but they never.." stop. Wives are for closers. #relationships (@seconds_0)
-[May’23] What happens when AI reads a book? I took advantage of the fact that Anthropic's Claude can now hold an entire short book in memory, and gave it my last book to read. / It did a surprisingly excellent job #misc (@emollick)
 "I'm convinced that we prefer insight to change. We think insight is change." #wisdom (@strangestloop)
 the more i love life the more life loves me funny how that works #wisdom (@mettafied)
 the more i learn about statistics the more horrified i get at how much personal interpretive choice is at play at every step #wisdom (@Aella_Girl)
@@ -259,7 +257,6 @@ my stepbrother told me when he buys a woman flowers, he keeps one for himself so
 if you are single and you want to have a kid (as in, baby in your arms) in 2-3 years from now, you need to meet and start dating your spouse within the next 6 months #relationships (@ScarletAstrorum)
 If you’re trying to play catch with someone and they keep refusing to throw the ball back, they probably don’t want to play catch / Flirting works the exact same way / Don’t come in too hot, have plausible deniability and see if they start doing it too #relationships (@Cluffalo)
 The winning strat is to be entertaining. Tell stories, share ideas, be courageous. Sometimes this opens up your date to talk about something they care about, and then you have to be smart enough to hand over the mic. Usually people don’t open up like this until a 2nd/3rd date #relationships (@BecomingCritter)
-There's been a guy who approached girls for 30 days straight. / Funny enough... / After a few days, he started getting consistent successful approaches. / This is how he did it: #relationships (@ModernVirility)
 The attractiveness of a midday pilates class is about two points higher on average than that of a morning or evening class #misc (@vocalcry)
 Who gets more opposite-sex attention when they go out? Dancers (r = .43) #relationships (@datepsych)
 Predictors of involuntary singlehood for women and men: [poor flirting capacity; poor sexual functioning; high choosiness; low agreeableness] #relationships (@datepsych)
@@ -409,7 +406,6 @@ I started going on daily walks... just to clear my mind. And suddenly, my anxiet
 Living well is a skill and you can develop that skill #wisdom (@simonsarris)
 The fastest way to lose confidence is breaking small promises to yourself. Do what you said you would do. Always. #growth (@Nithya_Shrii)
 [lmao - use AI on Hinge!] how can you struggle getting a date in 2026 when AI exists? / pathetic #relationships (@_sgarbini)
-Charisma is about how free you are in the moment #relationships (@isabelunraveled)
 oog used to think romance just for lover. but oog wrong. father want romance. friend want romance. grandmother want romance. not kiss romance. not mate romance. the other kind: "you special and oog prove it with action" romance. everyone walking around hoping someone make them feel like main character. be that someone. cost nothing but attention. or cost flower. flower worth it. love, oog #relationships (@oog84__)
 Luxuries [...] 1. Living 10 minutes from work / 2. Living 5 minutes from the gym [...] 6. Drinking coffee without rushing / 7. Sleeping with a clear conscience / 8. Laughing with people who truly get you / 9. Traveling every year / 10. Waking up naturally without an alarm / 11. Enjoying a home-cooked meal with loved ones / 12. Having time to read a book in one sitting / 13. Finding joy in simple daily routines #wisdom (@saylordocs)
 You are continually spending time. / Understand what you are buying. / If you don't, you will almost certainly regret the purchase. #wisdom (@justinskycak)
@@ -458,10 +454,8 @@ insane when you think about it that entire cultures have been treating an experi
 as a rule the psychologically healthier someone is, the less time it takes them to do something they were eventually going to do anyway. Anything from sending a text to quitting a job. I’m not sure what to call it—processing time? lack of blocks? low avoidance? #wisdom (@noampomsky)
 A long hike is an extremely good personality test and partnership test. #relationships (@lymanstoneky)
 When I write a really tricky algorithm in our codebase, I can have my LLM whip up a pretty HTML / JS visualizer to give future readers a visual intuition for it, 3blue1brown style, and commit that to the repo alongside the algo #misc (@GrantSlatton)
-Personal finance stuff is an amazing sweet spot for AI right now because: / -There's broad expert consensus on how to be basically responsible with money the AI can defer to / -It's otherwise monotonous, repetitive, and sometimes unpleasant to think about on your own / -You can set it up to give you a pretty regular overview of what your spending and saving should look like #misc (@AndyMasley)
 Social circles are quickly disintegrating because no one wants to do the hosting and organizing anymore / Taking on that role is the secret hack to having tons of friends, all it requires is for you to be more stubborn than other people are flaky #relationships (@allie__voss)
 weekend reminder: go do sexy activities to meet sexy people. / when i used to dance bachata, i remember constantly thinking… how am i surrounded by beautiful, sexy, feminine women and somehow there's not enough men? #relationships (@linderps)
-(<pangram-says-ai>) A grad student at MIT showed me his NotebookLM setup [...] He uploaded 6 textbooks, 15 research papers, and every lecture transcript he could find on the subject. / Then he asked NotebookLM one question: / "What are the 5 core mental models that every expert in this field shares?" [...] He followed up with: / "Now show me the 3 places where experts in this field fundamentally disagree, and what each side's strongest argument is." / In 20 minutes he had a map of the entire intellectual landscape of the field: the debates, the consensus, the open questions. [... Then:] "Generate 10 questions that would expose whether someone deeply understands this subject versus someone who just memorized facts." / He spent the next 6 hours answering those questions using the source material. Every wrong answer triggered a follow-up: / "Explain why this is wrong and what I'm missing." (</ai-over>) #growth (@ihtesham2005)
 everyone wants a village, but no one wants to be a villager / > drive your friends to the airport / > go to their party even when you're tired / > stop cancelling last minute / > host at your place / > support the wins & losses / it's worth every ounce of effort #relationships (@adele_bloch)
 Dressing well and trying to be attractive is a component of self respect but its also a component of respect for everyone else. You should want to make every environment you are in nicer. Your existence sets a mood for others. #beauty (@simonsarris)
 I used to think the key was identifying as many potential partners as possible and approaching them, these encounters, however, are rare; lately I've been trying to identify people who may be 1 step removed from my future wife and befriending them, this has 10x'd my surface area #relationships (@jemtheshowpig)
@@ -494,7 +488,6 @@ The literal #1 most suicidal belief you can have is that you're an introvert/soc
 You need to have the ability to articulate what makes you like her, you need to be able to explain it #relationships (@literally_chad)
 The great man is the man in the habit of heaping burdens upon himself, who, upon noticing his burdens have made him stronger and thus enhanced his capacities, looks to fill that gap with additional difficulty. He allows none of his strength to go unused. He spurns the easy life. #growth (@SovereignIM)
 When you accept the love of someone who has opened their heart to you, you have a huge responsibility to them. It is down to you to protect the heart that gave itself to you, to protect and nourish the light that pours itself into you, like a brave flower reaching towards heaven. #relationships (@SovereignIM)
-Self-control is refusing to let your present mood bankrupt someone you are about to become. #wisdom (@Kpaxs)
 if you want to meet sexy people, you need to be a sexy person. to be a sexy person, you need to do sexy things, such as: / - learn how to play guitar (you only need 4 chords to play 90% of music) / - take a dance class (sexy styles include hip hop, salsa, bachata) / - do an actually difficult sport: tennis, volleyball, surfing. "run club" does not count / - learn how to cook 1-2 dishes really fking well / practice. get better. develop a passion. / if you fall in love with a sexy hobby, someone will fall in love with you. #relationships (@linderps)
 Enjoyment is an undoing of: / 1 Shoulds / 2 What-ifs / 3 Have-tos / It is not a reward to be earned or a destination to be reached. / It is what remains when you stop fighting what is, right now, for long enough. #wisdom (@FU_joehudson)
 If you don't have a goal so meaningful it makes other people's opinions irrelevant, you will lose control of your life. You will adopt the goals assigned to you #growth (@thedankoe)
@@ -508,7 +501,6 @@ the highest definition of agency isn't just "I can do the things I need to do". 
 "Until death, all defeat is psychological." [qt of: Can a 29-year-old start all over again?] #wisdom (@Emarged)
 the best dating advice remains: would i want my son / daughter to turn out like this person? if the answer is not a resounding yes, that's not your person #relationships (@sadgirlyboss)
 People want to date (and later marry) those who make them feel good. This means making them feel sexy, important, and exciting. Most people never experience this, so they get super attached and forgiving of those who do. This is why flirty men and women (even the bad ones) always have somebody #relationships (@ppppp1245688)
-If you are having trouble dating girls, ask yourself these 10 questions: / 1. Do you have a strong mission, purpose, direction in life? Something that is more important or at least as important as having sex or getting a girlfriend. Do you have dreams and ambition for the future? / 2. Are you working hard to discover your talents and build your skills? [...] What kind of problems do you want to solve for people that they will pay you for? / 3. Are you pushing yourself to develop good exercise habits that will make you physically stronger and faster? / 4. Are you developing a sense of personal style? [...] Do you have good posture or bad posture? Do you speak with confidence? / 5. Do you have a fun and cool activity, something that helps you build your status and is also sociable? / 6. Are you learning game, learning about male-female polarity [...] about the fundamental differences between men and women? / 7. Are you building up your immunity to rejection by talking to a lot of people [...] / 8. Are you learning how to connect with and channel your masculine dark side, your lust, anger, greed, jealousy? [...] or numbing this energy by becoming addicted [...] / 9. Are you journaling/studying everyday so you can understand yourself better? Remember, writing clarifies thinking and feeling. [...] / 10. Are you making friends with other men who are pushing themselves to become better #relationships (@Getinwithgame)
 In my experience the 2 categories most highly correlated with a guy being naturally attractive to women are: / 1. A genuine self-amusement ability + not taking people or themselves too seriously / 2. A comfort and general willingness to break the invisible 4th wall/personal space and attention of people and groups around them (one of the biggest masculinity indicators) / All things being equal, if tell me how strong a guy ranks in those 2 categories, and i'll tell you how attractive women find him #relationships (@nomadgeist)
 You just have to be enchanted by reality in similar ways to your partner. / I think this is actually at the heart of what people mean when they say "they see the world the way that I do". / And it makes me wonder whether a great deal of quiet despair in relationships is from the absence of this. From a dreamworld two people can't inhabit together. #relationships (@mahlenr)
 you have to figure out what you're about or else the path of least resistance will fill you up with an incoherent and deeply unsatisfying life #growth (@kramerposts)
@@ -532,7 +524,6 @@ How to upgrade your self-image: / focus inwardly / picture the greatest version 
 Women forgive many sins but rarely forgive a lack of vitality. #relationships (@graveair)
 side projects used to be one of the best hiring signals, that's basically over [...] nothing seems impressive anymore [...] build something specifically for the company you're applying to / it shows two things: 1) you're familiar enough with claude to ship something extremely fast, and 2) you put real time into understanding what the company does #misc (@TheChowdhary)
 it’s useful to know what your highest-signal affinity markers are: the pieces of information about someone that, if true, make it much more likely you’ll see the world in a meaningfully similar way. these can be books, artists, bands, films, ideas, people, places, sensibilities. most shared tastes are nice but not that meaningful. others are wildly disproportionate. there are certain artists and bands where, if someone deeply gets them, i immediately feel there is a real chance we could become very good friends. #beauty (@majamediaco)
-(<pangram-says-ai>) The most dangerous mistake in life is assuming people are responding to reality, when they are actually responding to perception, because once you understand that people act based on what they believe is true, not what is true, you start managing how things appear, not just how they are. (</ai-over>) #relationships (@UnmodernmanBot)
 (<pangram-says-ai>) You’re born to f*cking create. Life will feel boring until you start creating something. Cure the boredom with creation. (</ai-over>) #growth (@Tim_Denning)
 (<pangram-says-ai>) the woman worth marrying isn't refreshing her hinge queue. she's living a life someone has to interrupt. (</ai-over>) #relationships (@musestoomuch)
 Once you become obsessed with something everything adjacent is sublime to you. The joy of obsession itself is in fact sublime. #beauty (@simonsarris)
