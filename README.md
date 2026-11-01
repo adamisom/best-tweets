@@ -8,6 +8,7 @@
 - Search by author
 - Filter by category
 - Keyword search
+- Search by meaning, in the browser with no server ([how it works and how I measured it](SEARCH.md))
 - Minimal design
 
 ### Hosting

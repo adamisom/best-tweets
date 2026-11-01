@@ -1,0 +1,39 @@
+# 30 eval queries, one per line. DRAFT by Claude: edit freely, these should be
+# things you'd actually search. Rough mix: exact words a tweet uses, paraphrases,
+# and pure concepts. Lines starting with # are ignored.
+
+# words a tweet likely uses
+courage
+small talk
+compounding
+approach women
+apologizing
+hosting a dinner party
+beautiful home
+motivation
+best friend
+gratitude
+
+# paraphrase of a tweet's idea
+afraid to talk to a pretty girl
+making friends as an adult
+what makes a good wife
+how to stop overthinking
+getting in shape changed my life
+how to flirt without being creepy
+invite people over more often
+asking someone out on a date
+being proud of how you live
+taste and aesthetics matter
+
+# concept, few shared words
+feeling alive
+loneliness
+first date tips
+keeping friendships going over the years
+building good habits
+dealing with rejection
+signs she is interested
+finding meaning in work
+confidence
+marriage and kids

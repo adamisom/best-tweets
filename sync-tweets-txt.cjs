@@ -1,5 +1,5 @@
 // Regenerates tweets.txt from index.html (index.html is the source of truth).
-// Usage: node sync-tweets-txt.js
+// Usage: node sync-tweets-txt.cjs
 const fs = require('fs');
 const path = require('path');
 
