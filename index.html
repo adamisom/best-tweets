@@ -120,13 +120,64 @@
             opacity: 1;
         }
 
-        .newtab-toggle {
+        .settings-toggle {
             margin-left: 8px;
-            opacity: 0.3;
         }
 
-        .newtab-toggle.active {
-            opacity: 0.85;
+        .settings-dialog {
+            margin: auto;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 20px 24px 16px;
+            background: #faf9f6;
+            color: #2a2a2a;
+            min-width: 260px;
+        }
+
+        .settings-dialog::backdrop {
+            background: rgba(0, 0, 0, 0.25);
+        }
+
+        .settings-dialog h2 {
+            font-size: 1em;
+            font-weight: 600;
+            margin: 0 0 14px;
+        }
+
+        .settings-dialog .settings-option {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95em;
+            text-transform: none;
+            letter-spacing: normal;
+            font-weight: normal;
+            color: inherit;
+            margin: 0;
+            cursor: pointer;
+        }
+
+        .settings-dialog .settings-option input {
+            width: auto;
+            padding: 0;
+            margin: 0;
+            accent-color: #2a2a2a;
+            cursor: pointer;
+        }
+
+        .settings-dialog form {
+            text-align: right;
+            margin-top: 18px;
+        }
+
+        html.dark-mode .settings-dialog {
+            background: #2a2a2a;
+            color: #f5e6d3;
+            border-color: #555;
+        }
+
+        html.dark-mode .settings-dialog .settings-option input {
+            accent-color: #f5e6d3;
         }
 
         .container {
@@ -585,8 +636,14 @@
 <body>
     <div class="container">
         <header>
-            <h1><a href="https://x.com/adam__isom" style="color: inherit; text-decoration: none;">@adam__isom</a>'s curated 'best of twitter' <span class="subtitle">(last count 583, aiming to stay <600)</span><button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">☀️</button><button class="theme-toggle newtab-toggle" id="newTabToggle" aria-label="Open tweets in new tabs" aria-pressed="false" title="open tweets in new tabs">↗</button><a href="https://github.com/adamisom/best-tweets" style="font-size: 0.75em; color: #666; text-decoration: none; margin-left: 8px;" aria-label="View on GitHub">(code)</a></h1>
+            <h1><a href="https://x.com/adam__isom" style="color: inherit; text-decoration: none;">@adam__isom</a>'s curated 'best of twitter' <span class="subtitle">(last count 583, aiming to stay <600)</span><button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">☀️</button><button class="theme-toggle settings-toggle" id="settingsBtn" aria-label="Settings" title="settings">&#9881;&#xFE0E;</button><a href="https://github.com/adamisom/best-tweets" style="font-size: 0.75em; color: #666; text-decoration: none; margin-left: 8px;" aria-label="View on GitHub">(code)</a></h1>
         </header>
+
+        <dialog id="settingsDialog" class="settings-dialog">
+            <h2>Settings</h2>
+            <label class="settings-option"><input type="checkbox" id="newTabCheckbox"> Open tweet links in new tabs</label>
+            <form method="dialog"><button class="saved-filter-btn">Done</button></form>
+        </dialog>
 
         <div class="controls">
             <div class="control-group">
@@ -1182,27 +1239,32 @@
             setTheme(!currentDark);
         });
 
-        const newTabToggle = document.getElementById('newTabToggle');
+        const settingsDialog = document.getElementById('settingsDialog');
+        const newTabCheckbox = document.getElementById('newTabCheckbox');
 
-        function setNewTab(on) {
-            newTabToggle.classList.toggle('active', on);
-            newTabToggle.setAttribute('aria-pressed', on);
-            newTabToggle.title = on ? 'opening tweets in new tabs' : 'open tweets in new tabs';
-            localStorage.setItem('newTab', on ? 'on' : 'off');
-        }
+        newTabCheckbox.checked = localStorage.getItem('newTab') === 'on';
 
-        setNewTab(localStorage.getItem('newTab') === 'on');
+        newTabCheckbox.addEventListener('change', () => {
+            localStorage.setItem('newTab', newTabCheckbox.checked ? 'on' : 'off');
+        });
 
-        newTabToggle.addEventListener('click', (e) => {
+        document.getElementById('settingsBtn').addEventListener('click', (e) => {
             e.preventDefault();
-            setNewTab(!newTabToggle.classList.contains('active'));
+            settingsDialog.showModal();
+        });
+
+        // A click on the backdrop lands on the dialog itself but outside its box.
+        settingsDialog.addEventListener('click', (e) => {
+            const r = settingsDialog.getBoundingClientRect();
+            const inside = e.clientX >= r.left && e.clientX <= r.right && e.clientY >= r.top && e.clientY <= r.bottom;
+            if (e.target === settingsDialog && !inside) settingsDialog.close();
         });
 
         // Capture phase, so the target is set before the browser follows the link.
         document.addEventListener('click', (e) => {
             const link = e.target.closest('a.tweet-link, a.tweet-author');
             if (!link) return;
-            if (newTabToggle.classList.contains('active')) {
+            if (newTabCheckbox.checked) {
                 link.target = '_blank';
                 link.rel = 'noopener';
             } else {
