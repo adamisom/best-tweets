@@ -183,7 +183,7 @@
         .container {
             max-width: 900px;
             margin: 0 auto;
-            padding: 60px 30px;
+            padding: 40px 30px;
         }
 
         header {
@@ -327,6 +327,14 @@
             border-color: #999;
         }
 
+        .keyword-row {
+            display: flex;
+            gap: 8px;
+        }
+        .keyword-row input {
+            flex: 1;
+            min-width: 0;
+        }
         .saved-filter-section {
             margin-bottom: 20px;
             display: flex;
@@ -609,12 +617,37 @@
         }
 
         @media (max-width: 768px) {
+            .container {
+                padding: 24px 20px;
+            }
+
             .controls {
-                grid-template-columns: 1fr;
+                grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+                gap: 14px 12px;
+            }
+
+            .controls .control-group,
+            .controls input,
+            .controls select {
+                min-width: 0;
+                width: 100%;
+            }
+
+            .keyword-row input {
+                width: auto;
+            }
+
+            .controls .control-group:first-child {
+                grid-column: 1 / -1;
+            }
+
+            .keyword-row .saved-filter-btn {
+                min-width: 0;
+                white-space: nowrap;
             }
 
             h1 {
-                font-size: 1.1em;
+                font-size: 1em;
             }
 
             .tweet-content {
@@ -648,7 +681,9 @@
         <div class="controls">
             <div class="control-group">
                 <label for="keywordSearch">Keyword</label>
-                <input type="text" id="keywordSearch" placeholder="start typing...">
+                <div class="keyword-row" id="keywordRow">
+                    <input type="text" id="keywordSearch" placeholder="start typing...">
+                </div>
             </div>
             <div class="control-group">
                 <label for="categoryFilter">category (AI)</label>
@@ -1209,6 +1244,21 @@
                 localStorage.setItem('savedTweets', JSON.stringify(savedTweets));
             }
         });
+
+        // On phones, the "Saved only" button sits next to the keyword box, so the
+        // focus-mode row below has room for its "click me!" hint.
+        (function () {
+            const btn = document.getElementById('savedFilterBtn');
+            const row = document.getElementById('keywordRow');
+            const section = document.querySelector('.saved-filter-section');
+            const mq = window.matchMedia('(max-width: 768px)');
+            function place() {
+                if (mq.matches) row.appendChild(btn);
+                else section.prepend(btn);
+            }
+            mq.addEventListener('change', place);
+            place();
+        })();
 
         document.getElementById('savedFilterBtn').addEventListener('click', (e) => {
             e.target.classList.toggle('active');
